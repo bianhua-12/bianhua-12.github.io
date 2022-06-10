@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>TJCTF 2022(crypto)(老年人复建) | 小帅问你行不行的博客</title><meta name="keywords" content="CTF"><meta name="author" content="Bianhua,1983908224@qq.com"><meta name="copyright" content="Bianhua"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="rsa-apprentice给了一个这个东西 123456&#x3D;&#x3D;&#x3D;&#x3D; SECRET RSA MESSAGE &#x3D;&#x3D;&#x3D;&#x3D;n &#x3D; 1216177716507739302616478655910148392804849e &#x3D; 65537c1 &#x3D; 257733734393970582988408159581244878149116c2 &#x3D; 84310590297078869541119784660574408">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TJCTF 2022(crypto)(老年人复建)">
+<meta property="og:url" content="http://bianhua-12.github.io/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/index.html">
+<meta property="og:site_name" content="小帅问你行不行的博客">
+<meta property="og:description" content="rsa-apprentice给了一个这个东西 123456&#x3D;&#x3D;&#x3D;&#x3D; SECRET RSA MESSAGE &#x3D;&#x3D;&#x3D;&#x3D;n &#x3D; 1216177716507739302616478655910148392804849e &#x3D; 65537c1 &#x3D; 257733734393970582988408159581244878149116c2 &#x3D; 84310590297078869541119784660574408">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-06-08T14:09:21.626Z">
+<meta property="article:modified_time" content="2022-06-08T14:11:14.179Z">
+<meta property="article:author" content="Bianhua">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://bianhua-12.github.io/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'TJCTF 2022(crypto)(老年人复建)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-08 23:11:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小帅问你行不行的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">TJCTF 2022(crypto)(老年人复建)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-08T14:09:21.626Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-08T14:11:14.179Z" title="更新于 2022-06-08 23:11:14">2022-06-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="TJCTF 2022(crypto)(老年人复建)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="rsa-apprentice"><a href="#rsa-apprentice" class="headerlink" title="rsa-apprentice"></a><strong>rsa-apprentice</strong></h1><p>给了一个这个东西</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">==== SECRET RSA MESSAGE ====</span><br><span class="line">n = 1216177716507739302616478655910148392804849</span><br><span class="line">e = 65537</span><br><span class="line">c1 = 257733734393970582988408159581244878149116</span><br><span class="line">c2 = 843105902970788695411197846605744081831851</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>先尝试质因子分解（因为n太短了），用<a target="_blank" rel="noopener" href="http://factordb.com/">factordb.com</a></p>
+<p>结果真的分解出来了，这题秒杀</p>
+<p>所以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p = 1033247481589406269253</span><br><span class="line">q = 1177043968824330681533</span><br><span class="line">phi(n) = 1216177716507739302614268364459734655854064</span><br><span class="line">d = 565565226757501422490731295964712042151217</span><br></pre></td></tr></table></figure>
+
+<p>所以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tjctf&#123;n0t_s0_S3cur3_Cryp70&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="flimsy-fingered-latin-teacher"><a href="#flimsy-fingered-latin-teacher" class="headerlink" title="flimsy-fingered-latin-teacher"></a><strong>flimsy-fingered-latin-teacher</strong></h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Oh no! My Latin teacher likes to touch type on her Dell laptop, but she has trouble keeping her fingers on the right keys in home row. The letters she&#x27;s typing out don&#x27;t really make sense. Can you help me understand what she&#x27;s saying so she doesn&#x27;t get upset when I come to her confused?</span><br><span class="line"></span><br><span class="line">ykvyg&#125;pp[djp,rtpelru[pdoyopm|</span><br></pre></td></tr></table></figure>
+
+<p>噢,不!我的拉丁老师喜欢在她的戴尔笔记本电脑上用手打字，但她的手指在家里那一排的正确键上总是有困难。她打出来的那些字母根本说不通。你能帮我理解她在说什么吗，这样当我遇到她困惑的时候她就不会难过了。</p>
+<p>是单表密码，使用词频分析，前16个都还能说的过去（因为词频分析不能处理符号）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">0	-2.652	t of the eckerne large cities</span><br><span class="line">1	-2.753	e the poor boys only worded of</span><br><span class="line">2	-2.760	t of the expence many exities</span><br><span class="line">3	-2.818	that fools or power molition</span><br><span class="line">4	-2.827	t of the ende a very amenities</span><br><span class="line">5	-2.838	askatoon form over long ago b</span><br><span class="line">6	-2.842	tly the expencer and exities</span><br><span class="line">7	-2.846	s has been felder client step</span><br><span class="line">8	-2.851	and a feeble overcome by a yew</span><br><span class="line">9	-2.855	e the poor bo avoid a force con</span><br><span class="line">10	-2.876	indict that outgrowth fifty</span><br><span class="line">11	-2.881	e the roof consoling of we wou</span><br><span class="line">12	-2.897	t by the ende over womenities</span><br><span class="line">13	-2.906	o pioneer se the butler dodec</span><br><span class="line">14	-2.926	that been reflex of menities</span><br><span class="line">15	-2.938	e opera as calmavily as he had</span><br><span class="line">16	-2.943	ezuela and aria morgan he has</span><br></pre></td></tr></table></figure>
+
+<p>不 太 行</p>
+<p>换思路，人手推</p>
+<p>我们能确定的是flag的开头是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tjctf&#123;</span><br></pre></td></tr></table></figure>
+
+<p>一个一个对，t对应y，说明左手往右一格，j对应k，说明右手往右一格。</p>
+<p>发现c对应v，y对应t正好能印证，所以这个单表就确定了。</p>
+<p>于是有映射</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ykvyg&#125;pp[djp,rtpelru[pdoyopm|</span><br><span class="line">tjctf&#123;oopshomerowkeyposition&#125;</span><br></pre></td></tr></table></figure>
+
+<p>over</p>
+<h1 id="complex-secrets"><a href="#complex-secrets" class="headerlink" title="complex-secrets"></a><strong>complex-secrets</strong></h1><p>发现给了一个加密的脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">from sage.geometry.hyperbolic_space.hyperbolic_isometry import moebius_transform</span><br><span class="line"></span><br><span class="line">from Crypto.Util.number import long_to_bytes</span><br><span class="line">from Crypto.Cipher import AES</span><br><span class="line">from Crypto.Util.Padding import pad</span><br><span class="line"></span><br><span class="line">CC = ComplexField(1000)</span><br><span class="line">M = random_matrix(CC, 2, 2)</span><br><span class="line">f = lambda z: moebius_transform(M, z)</span><br><span class="line"></span><br><span class="line">for _ in range(3):</span><br><span class="line">  z = CC.random_element()</span><br><span class="line">  print(f&#x27;&#123;z&#125;, &#123;f(z)&#125;&#x27;)</span><br><span class="line"></span><br><span class="line">kz = CC.random_element()</span><br><span class="line">print(kz)</span><br><span class="line">kw = f(kz)</span><br><span class="line"></span><br><span class="line">mod = 2^128</span><br><span class="line">key = (kw.real() * mod).round() % mod</span><br><span class="line">iv = (kw.imag() * mod).round() % mod</span><br><span class="line"></span><br><span class="line">cipher = AES.new(long_to_bytes(key), AES.MODE_CBC, iv=long_to_bytes(iv))</span><br><span class="line">flag = open(&#x27;flag.txt&#x27;, &#x27;rb&#x27;).read().strip()</span><br><span class="line">print(cipher.encrypt(pad(flag, AES.block_size)).hex())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>和密文</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0.751252475104902150054380260470082424940942078488589894835886382094520190155911685470371563701050697369544183678751477257366099792755542882738643885424403515309537713563954860359663092864297857722224211735174822128973163115308255633275717637048280034121430229730706501004373373606840613994093199272904 + 0.841861668516763747294345674363435037443728024638358025489205420413810104159006020506652639342846307992268857781065122156824070983948139347566280848043828162904529025108794173434070438994770903784077684729182119999999898429743502486564839408270440285915918786473949066441772595234741831309205651684568*I, 0.201820552659701567278699820457045288901739276475853715712764100364937770257073328213893265099577849805388343984823145356791212924649323204732529753602937115951408753746134803411134175204452068540445902455697100192364440968304237174405996380992768382752192891217816103133892621205190519839564725222336 - 0.423816958824499168732085508644057100988923673137297816050916269940199941289657589117016109479205180610293129190788130020334848589072754129840997885723883185873975039584829641029595055712803537604372394828956037589154549949135860267390135900885507020456790920944606711851387870845794071809212463826331*I</span><br><span class="line">0.776514793014311984655381138131509469524119992819474341428630456463062790504804085732082006149990815536681444111523509785092822425698382654446410973046444281734605680914187333689998896693689515515572759566347286867634521643581373917824881234446339954362247273943593098930150187397950843860306622863580 - 0.475941057343914186895589101614692640391909664493116855595391636931715883641297227266824525033304512086494648741752634404427477616507082658573651384315523503299684846939359967818427022483531221272993316410991540493338441862300216790766719914758162337707917622972274977542891277169823499536763125709585*I, -0.0829824818323282231623134481057668754985546957232604522537959371649871583122429186730368826584813431855656529072360381066022438542967328924620815379076055266869158774334279817117785958274749511064133235090193481885185609994694126394591206558758685625397685334044491178052667228923075424247180695156733 - 0.345968105333553918003350791800133871917169258067196813155704860190219573649329520234046050433552655043308191278482739184238585083866790899409442542622314116242407901893394617331646886924568686923321775812031833527308561174363131001702994010093133515271661218024100064870678806860802831198736170237818*I</span><br><span class="line">-0.663391286734319736221346827623975650876654174129163479999853756391523203053535380294499772727456329988663661017976540801565872590854885766890888718844237565749376595356449959916640884087636566696028558587824118362193073284962397122081289899459328925814593804377359288230153455767585281669116316313838 - 0.541972552032528264213207333690290306273643909443286376166758545232778816979109002956992498760686744632107620506460722001053633042992521936775229761220922161685536981820475802554464255845679826910500220248396022338451861954865035006422732330447426553673873063666046382284940947655478871891111612590363*I, -0.581553240882262142181162436851132289784778023925017966570121189620721985017340981461901293038675551540555862372770197898969554728546495567114247578757093239302052370860105596035152108951138049420348497070193324989773752109127977897835841630760517346911518784515371336885087578772556126040706025016486 - 0.148891000802543728193673210236342762919468936522408931382020735274855877447158050594952372999611361659214905876927902350126036191702513383200942854542901034359507175169802518275202909250334785751232390353915118390153035895526806899854120766226305502441103032328925290052995543903563706593391160092495*I</span><br><span class="line">-0.0968534235652319724025450700698245234813539980041800600675421557470079496692551704865634640081720474347208421764841452873771406009576502860884618489512416419757653899190683903143407896055069135527721841815213047414891185198812567191127563886853563460067525848162939956023227470365024430670027432479732 + 0.719846481319096444790392680396336625594155249590319099592967249434838543457064356759442590295332754722430981682955876722774704123394791814708454569343858536944427455385194480750097647064579948613218733596833670889225422205686067565808161860977900582097779526341740619742016067509756290527564777944900*I</span><br><span class="line">02c0142e94bdb20796edd08352ffe716a03afdffc2926c99e79620873a47f5149a67213d8c97b53fce16fb78f66c28cd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>让我们写出解密的脚本</p>
+<p>遇到的第一个困难就是 sage安不上，一直提示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Requirement already satisfied:</span><br></pre></td></tr></table></figure>
+
+<p>但是根本没安，pip这个骗子。。。裂开</p>
+<p>尝试升级pip</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install -U pip</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="factor-master"><a href="#factor-master" class="headerlink" title="factor-master"></a><strong>factor-master</strong></h1><p>使用yafu无脑分解即可，有一定概论分解不出来（超时），只需重新来过即可。</p>
+<h2 id="yafu的使用"><a href="#yafu的使用" class="headerlink" title="yafu的使用"></a>yafu的使用</h2><p>推荐采用文件读写的方式，因为yafu命令行闪退导致对用户不是很友好</p>
+<p>使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yafu-x64 &quot;factor(@)&quot; -batchfile p.txt</span><br></pre></td></tr></table></figure>
+
+<p>记得在行尾加回车</p>
+<h1 id="morph-master"><a href="#morph-master" class="headerlink" title="morph-master"></a><strong>morph-master</strong></h1><p>先看代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/bin/python -u</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> libnum <span class="keyword">import</span> s2n, n2s</span><br><span class="line">N = <span class="number">1024</span></span><br><span class="line">p = getPrime(N)</span><br><span class="line">q = getPrime(N)</span><br><span class="line"><span class="keyword">assert</span> GCD(p * q, (p - <span class="number">1</span>) * (q - <span class="number">1</span>)) == <span class="number">1</span></span><br><span class="line"></span><br><span class="line">n = p * q</span><br><span class="line">s = n ** <span class="number">2</span></span><br><span class="line">λ = (p - <span class="number">1</span>) * (q - <span class="number">1</span>) // GCD(p - <span class="number">1</span>, q - <span class="number">1</span>)</span><br><span class="line">g = getRandomRange(<span class="number">1</span>, s)</span><br><span class="line">L = <span class="keyword">lambda</span> x : (x - <span class="number">1</span>) // n</span><br><span class="line">μ = <span class="built_in">pow</span>(L(<span class="built_in">pow</span>(g, λ, s)), -<span class="number">1</span>, n)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">encrypt</span>(<span class="params">m</span>):</span><br><span class="line">    <span class="comment"># r = getRandomRange(1, n)</span></span><br><span class="line">    r = <span class="number">1</span></span><br><span class="line">    c = (<span class="built_in">pow</span>(g, m, s) * <span class="built_in">pow</span>(r, n, s)) % (s)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">c</span>):</span><br><span class="line">    m = (L(<span class="built_in">pow</span>(c, λ, s)) * μ) % n</span><br><span class="line">    <span class="keyword">return</span> m</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;public key (n, g) = (<span class="subst">&#123;n&#125;</span>, ?)&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;E(4) = <span class="subst">&#123;encrypt(<span class="number">4</span>)&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Encrypt &#x27;Please give me the flag&#x27; for your flag:&quot;</span>)</span><br><span class="line">c = encrypt(<span class="built_in">int</span>(s2n(<span class="string">&quot;Please give me the flag&quot;</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;c=(<span class="subst">&#123;c&#125;</span>)&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;n=(<span class="subst">&#123;c&#125;</span>)&quot;</span>)</span><br><span class="line">m = decrypt(c)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> long_to_bytes(m) == <span class="string">b&quot;Please give me the flag&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Okay!&quot;</span>)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;flag.txt&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">       <span class="built_in">print</span>(f.read())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hmm... not quite.&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>第一次尝试：加解密都用到了随机生成的数，很容易猜到随机数的大小与结果无关，所以这里r直接取1，g取2。仔细观察后发现，这题就是像让你加密，而且你发现加密用到的东西都是固定的，现在r已经等于1了，n是给你的，所以直接加密即可</p>
+<p>失败了</p>
+<p>原因是我这边g取2后会影响到μ的取值所以需要通过E(4)把g求出来，</p>
+<p>第二次尝试：爆破即可。</p>
+<p>失败了，实在是太慢了。</p>
+<p>第三次尝试，因为E4只是4次方所以枚举k，使得ks+E4能被开方即可求得g</p>
+<p>不  太  行，解空间比上一次还大</p>
+<hr>
+<p>之后就没有了，其他的全摸了。。。。</p>
+<p>后来我才知道这居然是美国一高中办的比赛，我人傻了</p>
+<p>果然还是技不如人</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://bianhua-12.github.io">Bianhua</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://bianhua-12.github.io/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/">http://bianhua-12.github.io/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bianhua-12.github.io" target="_blank">小帅问你行不行的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/06/09/%E5%8D%8F%E5%8F%98/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">java中的逆变与协变</div></div></a></div><div class="next-post pull-right"><a href="/2022/06/08/sc/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">软件构造lab1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Bianhua</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bianhua-12"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa-apprentice"><span class="toc-number">1.</span> <span class="toc-text">rsa-apprentice</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#flimsy-fingered-latin-teacher"><span class="toc-number">2.</span> <span class="toc-text">flimsy-fingered-latin-teacher</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#complex-secrets"><span class="toc-number">3.</span> <span class="toc-text">complex-secrets</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#factor-master"><span class="toc-number">4.</span> <span class="toc-text">factor-master</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#yafu%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">4.1.</span> <span class="toc-text">yafu的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#morph-master"><span class="toc-number">5.</span> <span class="toc-text">morph-master</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/13/ADTANDOOP/" title="ADT与OOP"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ADT与OOP"/></a><div class="content"><a class="title" href="/2022/06/13/ADTANDOOP/" title="ADT与OOP">ADT与OOP</a><time datetime="2022-06-13T15:00:00.000Z" title="发表于 2022-06-14 00:00:00">2022-06-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/09/%E5%8D%8F%E5%8F%98/" title="java中的逆变与协变"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java中的逆变与协变"/></a><div class="content"><a class="title" href="/2022/06/09/%E5%8D%8F%E5%8F%98/" title="java中的逆变与协变">java中的逆变与协变</a><time datetime="2022-06-09T15:00:00.000Z" title="发表于 2022-06-10 00:00:00">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/" title="TJCTF 2022(crypto)(老年人复建)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TJCTF 2022(crypto)(老年人复建)"/></a><div class="content"><a class="title" href="/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/" title="TJCTF 2022(crypto)(老年人复建)">TJCTF 2022(crypto)(老年人复建)</a><time datetime="2022-06-08T14:09:21.626Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/sc/" title="软件构造lab1"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件构造lab1"/></a><div class="content"><a class="title" href="/2022/06/08/sc/" title="软件构造lab1">软件构造lab1</a><time datetime="2022-06-08T14:09:21.606Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/csapp_lab4/" title="计算机系统LAB4"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机系统LAB4"/></a><div class="content"><a class="title" href="/2022/06/08/csapp_lab4/" title="计算机系统LAB4">计算机系统LAB4</a><time datetime="2022-06-08T14:09:21.585Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Bianhua</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

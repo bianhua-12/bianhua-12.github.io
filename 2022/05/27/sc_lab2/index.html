@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Lab2踩过的坑 | 小帅问你行不行的博客</title><meta name="keywords" content="软件构造"><meta name="author" content="Bianhua,1983908224@qq.com"><meta name="copyright" content="Bianhua"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="P1审题我觉得一个正常大学生是很难读懂题目的要求的（至少我不能一下就看懂） 所以我来翻译一下 1Edges in the graph count adjacencies: the number of times &quot;w1&quot; is followed by &quot;w2&quot; in the corpus is the weight of the edge from w1 t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lab2踩过的坑">
+<meta property="og:url" content="http://bianhua-12.github.io/2022/05/27/sc_lab2/index.html">
+<meta property="og:site_name" content="小帅问你行不行的博客">
+<meta property="og:description" content="P1审题我觉得一个正常大学生是很难读懂题目的要求的（至少我不能一下就看懂） 所以我来翻译一下 1Edges in the graph count adjacencies: the number of times &quot;w1&quot; is followed by &quot;w2&quot; in the corpus is the weight of the edge from w1 t">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-05-27T15:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-28T08:00:01.016Z">
+<meta property="article:author" content="Bianhua">
+<meta property="article:tag" content="软件构造">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://bianhua-12.github.io/2022/05/27/sc_lab2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Lab2踩过的坑',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-28 17:00:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小帅问你行不行的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Lab2踩过的坑</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-27T15:00:00.000Z" title="发表于 2022-05-28 00:00:00">2022-05-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-28T08:00:01.016Z" title="更新于 2022-05-28 17:00:01">2022-05-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Lab2踩过的坑"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="P1"><a href="#P1" class="headerlink" title="P1"></a>P1</h1><h2 id="审题"><a href="#审题" class="headerlink" title="审题"></a>审题</h2><p>我觉得一个正常大学生是很难读懂题目的要求的（至少我不能一下就看懂）</p>
+<p>所以我来翻译一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Edges in the graph count adjacencies: the number of times &quot;w1&quot; is followed by &quot;w2&quot; in the corpus is the weight of the edge from w1 to w2.</span><br></pre></td></tr></table></figure>
+
+<p>还是拿他的那个例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello, HELLO, hello, goodbye!  </span><br></pre></td></tr></table></figure>
+
+<p>不区分大小写，这四个词是连续的三个hello和一个goodbye，分别考察临近的词，hello后边跟hello的次数是2，跟goodbye的次数是1所以权重分别为2和1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The bridge word between input words &quot;w1&quot; and &quot;w2&quot; will be some &quot;b&quot; such that w1 -&gt; b -&gt; w2 is a two-edge-long path with maximum-weight weight among all the two-edge-long paths from w1 to w2 in this poet&#x27;s affinity graph. </span><br></pre></td></tr></table></figure>
+
+<p>啥叫two-edge-long？其实w1到b是一条边，b到w2是一条边，就是two-edge</p>
+<p>关于最大权重：</p>
+<p>我们还是看他给的那个例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is a test of the Mugar Omni Theater sound system.    </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Test 	  the 						   system. </span><br><span class="line">Test of the 						   system.</span><br></pre></td></tr></table></figure>
+
+
+
+<p>test到of的权重是1，of到the的权重是1，于是添加 了of权重增加2，是最大的。</p>
+<p>后来我发现他地下有个动图讲的比我清楚多了（</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>还是老生长谈的问题，路径依赖，包导入等等。</p>
+<h3 id="1-无法解析符号Graph"><a href="#1-无法解析符号Graph" class="headerlink" title="1 无法解析符号Graph"></a>1 无法解析符号Graph</h3><p>解决方案：将src设置为模块，将P1设置为原根，那么graph会自动成为一个包，里面的类就能互相解析了。</p>
+<h3 id="2源根-‘D-GitHub-HIT-Lab2-120L021410-src’-无法在模块-‘HIT-Lab2-120L021410’-中定义，因为它属于嵌套模块-‘src’-的内容"><a href="#2源根-‘D-GitHub-HIT-Lab2-120L021410-src’-无法在模块-‘HIT-Lab2-120L021410’-中定义，因为它属于嵌套模块-‘src’-的内容" class="headerlink" title="2源根 ‘D:\GitHub\HIT-Lab2-120L021410\src’ 无法在模块 ‘HIT-Lab2-120L021410’ 中定义，因为它属于嵌套模块 ‘src’ 的内容"></a>2源根 ‘D:\GitHub\HIT-Lab2-120L021410\src’ 无法在模块 ‘HIT-Lab2-120L021410’ 中定义，因为它属于嵌套模块 ‘src’ 的内容</h3><p>这个非常的玄学，</p>
+<p>在IDEA 中创建多模块项目时，经常会在项目结构调整（如新建或删除模块）的时候报出错误，导致工程编译或者标识源文件失败。这是因为在模块创建的时候有些不应该属于子模块的文件也被创建了出来，IDEA 将之记录在了模块配置的 xml 及 iml文件 中，之后尽管子模块中相干文件被删除，但是模块配置文件并没有被更新，从而导致了问题的发生</p>
+<p><strong>这件事告诉我们不要随便手动删除</strong></p>
+<h1 id="P2"><a href="#P2" class="headerlink" title="P2"></a>P2</h1><p>这个相对P1难度小了很多</p>
+<h2 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h2><h3 id="无法将附加测试报告到测试框架，或测试框架以外退出"><a href="#无法将附加测试报告到测试框架，或测试框架以外退出" class="headerlink" title="无法将附加测试报告到测试框架，或测试框架以外退出"></a>无法将附加测试报告到测试框架，或测试框架以外退出</h3><p>是因为我junit包没有导入全导致的问题，但是网上居然没人说没导全会导致这个问题？（</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://bianhua-12.github.io">Bianhua</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://bianhua-12.github.io/2022/05/27/sc_lab2/">http://bianhua-12.github.io/2022/05/27/sc_lab2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bianhua-12.github.io" target="_blank">小帅问你行不行的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0/">软件构造</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/06/01/HIT-AI/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">HIT人工智能实验指北</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/10/git/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">git学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/06/13/ADTANDOOP/" title="ADT与OOP"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-14</div><div class="title">ADT与OOP</div></div></a></div><div><a href="/2022/06/08/sc/" title="软件构造lab1"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-08</div><div class="title">软件构造lab1</div></div></a></div><div><a href="/2022/05/10/git/" title="git学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-11</div><div class="title">git学习笔记</div></div></a></div><div><a href="/2022/06/09/%E5%8D%8F%E5%8F%98/" title="java中的逆变与协变"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-10</div><div class="title">java中的逆变与协变</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Bianhua</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bianhua-12"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#P1"><span class="toc-number">1.</span> <span class="toc-text">P1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A1%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">审题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90%E7%AC%A6%E5%8F%B7Graph"><span class="toc-number">1.2.1.</span> <span class="toc-text">1 无法解析符号Graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E6%BA%90%E6%A0%B9-%E2%80%98D-GitHub-HIT-Lab2-120L021410-src%E2%80%99-%E6%97%A0%E6%B3%95%E5%9C%A8%E6%A8%A1%E5%9D%97-%E2%80%98HIT-Lab2-120L021410%E2%80%99-%E4%B8%AD%E5%AE%9A%E4%B9%89%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%AE%83%E5%B1%9E%E4%BA%8E%E5%B5%8C%E5%A5%97%E6%A8%A1%E5%9D%97-%E2%80%98src%E2%80%99-%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.2.</span> <span class="toc-text">2源根 ‘D:\GitHub\HIT-Lab2-120L021410\src’ 无法在模块 ‘HIT-Lab2-120L021410’ 中定义，因为它属于嵌套模块 ‘src’ 的内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#P2"><span class="toc-number">2.</span> <span class="toc-text">P2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98-1"><span class="toc-number">2.1.</span> <span class="toc-text">问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E6%B3%95%E5%B0%86%E9%99%84%E5%8A%A0%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E5%88%B0%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%EF%BC%8C%E6%88%96%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E4%BB%A5%E5%A4%96%E9%80%80%E5%87%BA"><span class="toc-number">2.1.1.</span> <span class="toc-text">无法将附加测试报告到测试框架，或测试框架以外退出</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/13/ADTANDOOP/" title="ADT与OOP"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ADT与OOP"/></a><div class="content"><a class="title" href="/2022/06/13/ADTANDOOP/" title="ADT与OOP">ADT与OOP</a><time datetime="2022-06-13T15:00:00.000Z" title="发表于 2022-06-14 00:00:00">2022-06-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/09/%E5%8D%8F%E5%8F%98/" title="java中的逆变与协变"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java中的逆变与协变"/></a><div class="content"><a class="title" href="/2022/06/09/%E5%8D%8F%E5%8F%98/" title="java中的逆变与协变">java中的逆变与协变</a><time datetime="2022-06-09T15:00:00.000Z" title="发表于 2022-06-10 00:00:00">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/" title="TJCTF 2022(crypto)(老年人复建)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TJCTF 2022(crypto)(老年人复建)"/></a><div class="content"><a class="title" href="/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/" title="TJCTF 2022(crypto)(老年人复建)">TJCTF 2022(crypto)(老年人复建)</a><time datetime="2022-06-08T14:09:21.626Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/sc/" title="软件构造lab1"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件构造lab1"/></a><div class="content"><a class="title" href="/2022/06/08/sc/" title="软件构造lab1">软件构造lab1</a><time datetime="2022-06-08T14:09:21.606Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/csapp_lab4/" title="计算机系统LAB4"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机系统LAB4"/></a><div class="content"><a class="title" href="/2022/06/08/csapp_lab4/" title="计算机系统LAB4">计算机系统LAB4</a><time datetime="2022-06-08T14:09:21.585Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Bianhua</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

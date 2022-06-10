@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>git学习笔记 | 小帅问你行不行的博客</title><meta name="keywords" content="软件构造"><meta name="author" content="Bianhua,1983908224@qq.com"><meta name="copyright" content="Bianhua"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="commit中的细节blob是压缩了的仓库文件，不储存文件名信息 对于每个文件中的每个版本，git只会存储一个blob，而允许多个commit tree指向一个blob 如果文件未变化，只会存储一个blob，后续指针指向该blob；若发生变化，存储多份blob。 git存的是变化的文件而不是变化的代码行 分支：branch总是在一个分支上工作不是正确的 git 使用方式。通常，我们在研发分支工作，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git学习笔记">
+<meta property="og:url" content="http://bianhua-12.github.io/2022/05/10/git/index.html">
+<meta property="og:site_name" content="小帅问你行不行的博客">
+<meta property="og:description" content="commit中的细节blob是压缩了的仓库文件，不储存文件名信息 对于每个文件中的每个版本，git只会存储一个blob，而允许多个commit tree指向一个blob 如果文件未变化，只会存储一个blob，后续指针指向该blob；若发生变化，存储多份blob。 git存的是变化的文件而不是变化的代码行 分支：branch总是在一个分支上工作不是正确的 git 使用方式。通常，我们在研发分支工作，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-05-10T15:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-10T11:22:37.129Z">
+<meta property="article:author" content="Bianhua">
+<meta property="article:tag" content="软件构造">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://bianhua-12.github.io/2022/05/10/git/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'git学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-10 20:22:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小帅问你行不行的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">git学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-10T15:00:00.000Z" title="发表于 2022-05-11 00:00:00">2022-05-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-10T11:22:37.129Z" title="更新于 2022-06-10 20:22:37">2022-06-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="git学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="commit中的细节"><a href="#commit中的细节" class="headerlink" title="commit中的细节"></a>commit中的细节</h1><p>blob是压缩了的仓库文件，不储存文件名信息</p>
+<p>对于每个文件中的每个版本，git只会存储一个blob，而允许多个commit tree指向一个blob</p>
+<p>如果文件未变化，只会存储一个blob，后续指针指向该blob；若发生变化，存储多份blob。</p>
+<p><strong>git存的是变化的文件而不是变化的代码行</strong></p>
+<h1 id="分支：branch"><a href="#分支：branch" class="headerlink" title="分支：branch"></a>分支：branch</h1><p>总是在一个分支上工作不是正确的 git 使用方式。通常，我们在研发分支工作，频繁地进行推送；每当累计更新到一个较稳定的版本，我们才会向 master 分支合并。还记得每个 commit 都是快照吗？事实上，每个 commit 也有一个指向本分支前一次 commit 的指针,而 git 通过一个名为 “HEAD” 的指针，来标记当前处于哪个分支。</p>
+<p>分支的特性有多重要呢？我认为， <strong>不了解分支，不足以谈用过 git。</strong> 这也是将分支单独作为一章的原因。</p>
+<p>需要指出：“master” 并不是一个特殊的分支；只不过 git init 命令会自动创建一个名为 master 的分支作为初始分支，而大多数用户都懒得去改动它。</p>
+<h2 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h2><p>创建一个名为 dev 的分支（我通常将开发分支叫这个名字）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch dev</span><br></pre></td></tr></table></figure>
+
+<p>git 通过 HEAD 指针管理“当前分支”。我们以 log 命令的返回信息来说明什么是当前分支：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git log --oneline</span><br><span class="line">b895843 (HEAD -&gt; dev, origin/dev) GitLearning: Update to &#x27;tag&#x27; section.</span><br><span class="line">def0a06 Git: Init.</span><br><span class="line">36e8d6b Update README.</span><br><span class="line">bae6fc8 (origin/master, master) Init</span><br></pre></td></tr></table></figure>
+
+<p>以上输出结果说明 HEAD 指向 dev 分支，而 master 分支停留在之前的位置。上面提到的 orign&#x2F;… 分支是指被推送到了远程 origin 仓库的分支。</p>
+<h2 id="切换分支：checkout"><a href="#切换分支：checkout" class="headerlink" title="切换分支：checkout"></a>切换分支：checkout</h2><p>切换到一个已有的分支：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout dev</span><br></pre></td></tr></table></figure>
+
+<p>要新建一个分支并切换过去，添加 -b 选项：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b test</span><br></pre></td></tr></table></figure>
+
+<h2 id="合并分支：merge"><a href="#合并分支：merge" class="headerlink" title="合并分支：merge"></a>合并分支：merge</h2><p>重要</p>
+<p>合并分支是 Git 使用的重中之重。</p>
+<p>我们通过一个例子来了解分支合并。这个例子来自与官方手册，有改动。</p>
+<p>假设你拥有一个仓库，master 分支有 3 个提交，而你正在 dev 分支上工作：</p>
+<p>注意到你的 dev 分支此时是领先于 master 分支的。这时，你接到一个 issue 17，说你的 master 分支有一个问题需要立刻修复，因此你不得不切换分支去解决它。你的做法是回到 master 分支，新建一个 hotfix 分支（假设你的 dev 工作目录的改动都已经提交；我们稍晚再来讨论存在文件未提交的情况）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git checkout -b hotfix</span><br><span class="line">... (在 hotfix 分支修复了问题)</span><br><span class="line">$ git commit -a -m &quot;Fix issue #17.&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>此时分叉（diverge）就出现了，你的 hotfix 分支修复后，指针位于 C4:</p>
+<p>既然 hotfix 分支完成了它的使命，那么就需要将它的内容 merge 到 master 分支，并在成功合并后删除它：</p>
+<p>警告</p>
+<p>这只是最普通的合并分支做法；关于如何选择恰当的工作流（workflow）来规范管理与协调各个分支，请参考 <a target="_blank" rel="noopener" href="https://wklchris.github.io/blog/Git/Branch.html#branch-workflow">分支工作流</a> 这一节的内容。例如，有许多工作流并不推荐使用 fast-forward 合并。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git merge hotfix</span><br><span class="line">$ git branch -d hotfix</span><br></pre></td></tr></table></figure>
+
+
+
+<p>该合并是一个典型的 fast-forward 合并，即发生合并操作的两个分支之间没有分叉（即 master 没有在 C2 之后的提交；此时合并操作只需要确认无冲突后，移动 master 指针到 hotfix 指针所在位置即可）。</p>
+<p>好了，现在你完成了 issue 17 的热更新，继续回到你的 dev 分支工作。不多久，你完成了你在 dev 分支的工作，也就是提交 C5：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout dev</span><br><span class="line">...</span><br><span class="line">$ git commit -a -m &quot;New features &amp; bugs: ...&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意到 master 位于 C4 而不再是 C2，这是因为与已被删除的 hotfix 分支合并过：</p>
+<p>现在需要开始一次新的合并了，切换到 master 分支以进行合并：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git merge dev</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这次分支合并主要涉及到三个提交点，在上图中已经标出：</p>
+<ul>
+<li>C4：master 分支当前位置；</li>
+<li>C5：dev 分支当前位置；</li>
+<li>C2：两个分支的共同祖先（common ancestor）。</li>
+</ul>
+<p>此时的合并是一个三方合并（three-way merge）,无法通过简单地移动指针来完成。因此，git 会新建一个合并提交（merge commit）C6，其特点是拥有两个父提交。</p>
+<p>由于我们在 master 分支上进行合并，因此 C4 称为第一父提交，C5 称为第二父提交。</p>
+<h2 id="删除分支：branch-d"><a href="#删除分支：branch-d" class="headerlink" title="删除分支：branch -d"></a>删除分支：branch -d</h2><p>如果没有冲突（单人工作时往往不会产生冲突），就能成功合并。上例合并后，你可以删除 dev 分支。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d dev</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>要删除未合并过的分支，使用 -D 选项代替 -d 选项。</p>
+</li>
+<li><p>要删除远程仓库中的分支，使用带 –delete 选项的 push 命令。比如，删除 origin 远程仓库中的 issuefix 分支：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete issuefix</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="查看分支列表：branch-v"><a href="#查看分支列表：branch-v" class="headerlink" title="查看分支列表：branch -v"></a>查看分支列表：branch -v</h2><p>使用 git branch 命令查看分支列表，带“*”的是当前分支（即 HEAD 所在分支）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">master</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用 -v 选项来查看每个分支的最后一次提交：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -v</span><br><span class="line">* dev    e6c4681 Attempt to fix center-aligning of picture in Markdown.</span><br><span class="line">master bae6fc8 Init</span><br></pre></td></tr></table></figure>
+
+<p>使用 –merged 选项以只显示完全合并到当前分支的分支。这个列表中的分支与你的当前分支没有分叉，且落后于当前分支；无特殊情况下，它们可以被删除（比如上文的 hotfix 分支已完全合并到 master 分支，可以删除）。–no-merged 选项则相反。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --merged</span><br><span class="line">$ git branch --no-merged</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果你尝试用 -d 选项删除分支，但这个分支位于 –no-merged 列表中，git 会阻止你的删除操作（因为这意味着这个分支中的工作会丢失）。不过你总能使用 -D 选项来强制进行删除操作。</p>
+<p>最后，使用 -vv 选项可以查看跟踪（上游）分支的信息。</p>
+<h2 id="远程：跟踪分支（上游分支）"><a href="#远程：跟踪分支（上游分支）" class="headerlink" title="远程：跟踪分支（上游分支）"></a>远程：跟踪分支（上游分支）</h2><p>跟踪分支也叫上游分支。当你从远程仓库克隆了分支，你的这个本地分支会自动设置为跟踪该远程仓库的对应分支。这是你就可以使用 git pull 命令方便地进行本地仓库更新。</p>
+<p>如果你的需要手动设置本地分支跟踪远程分支，一种方法是使用带 <code>--track</code> 参数的 <code>checkout</code> 命令来新建一个本地分支，并使其跟踪远程分支：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout --track origin/issuefix</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这个操作会在本地创建一个 issuefix 分支，并设置其跟踪 origin 远程仓库中的对应分支。实质上，该命令是下面这条命令的简写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b issuefix origin/issuefix</span><br></pre></td></tr></table></figure>
+
+
+
+<p>更改紧跟 -b 选项后的 issuefix，就能将本地分支设置成另外的名称。</p>
+<p>另一种设置跟踪分支的方法是使用 <code>branch</code> 命令的 <code>--set-upstream-to/-u</code> 参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev</span><br><span class="line">$ git branch -u origin/dev</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果不想切换到 dev 分支操作，你也可以在其他分支使用类似第二行的命令，只不过要在末尾额外添加一个分支名：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -u origin/dev dev</span><br></pre></td></tr></table></figure>
+
+
+
+<p>设置了跟踪后，用 @{upstream} 或 @{u} 来指代远程分支。例如，在你设置 issuefix 分支跟踪对应远程分之后，你可以使用 git merge @{u} 代替 git merge origin&#x2F;issuefix。</p>
+<p>在上文已经介绍过，可以通过 branch 命令的 -vv 选项来查看跟踪分支的信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -vv</span><br><span class="line">* dev    e6c4681 Attempt to fix center-aligning of picture in Markdown.</span><br><span class="line">master bae6fc8 [origin/master] Init</span><br></pre></td></tr></table></figure>
+
+
+
+<p>以上表示我的 dev 分支尚未设置跟踪远程分支。</p>
+<h2 id="冲突处理"><a href="#冲突处理" class="headerlink" title="冲突处理"></a>冲突处理</h2><p>在合并分支时，如果存在分叉，那么可能会有冲突（conflict）。冲突是指在不同的分支中，同一个文件的同一部分（比如同一行）被以不同的方式修改了。此时如果使用 git merge 命令，git 会在检测到冲突后自动暂停合并，弹出合并工具界面，等待用户解决。</p>
+<p>参考官方手册得来的一个冲突提示样例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html</span><br><span class="line">&lt;div id=&quot;footer&quot;&gt;contact : email.support@github.com&lt;/div&gt;</span><br><span class="line">=======</span><br><span class="line">&lt;div id=&quot;footer&quot;&gt;</span><br><span class="line">please contact us at support@github.com</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev:index.html</span><br></pre></td></tr></table></figure>
+
+<p>上述信息表示，HEAD 指针指向的版本（目前在 master 分支上，因为之前我们在尝试进行合并操作之前切换到了 master 分支）的内容如 “&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;” 上方的内容所示；而 dev 分支的同一部分内容却如其下方所示.</p>
+<p>要解决冲突，通常的做法是选择其中一个分支保留（当然，你也可以自行输入内容）：</p>
+<ol>
+<li>确定要保留哪个分支的内容；</li>
+<li>将 “&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;” 另一侧的所有行删除；</li>
+<li>将 “&lt;&lt;&lt;&lt;&lt;&lt;&lt;”, “&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;” 与 “&gt;&gt;&gt;&gt;&gt;&gt;&gt;” 所在的行删除。</li>
+</ol>
+<p>例如，上文如果要保留 dev 分支的内容，那么就更改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;footer&quot;&gt;</span><br><span class="line">please contact us at support@github.com</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后你可以退出合并工具界面了，告诉 git 已经解决了冲突。</p>
+<h2 id="分支工作流"><a href="#分支工作流" class="headerlink" title="分支工作流"></a>分支工作流</h2><p>选择一个合适的分支工作流是高效管理项目开发的重要步骤。</p>
+<p>不同的项目可能适用不同的分支策略（branching scheme）。本文主要介绍 Git workflow 与 Github workflow 两种工作流。</p>
+<h3 id="Git-工作流"><a href="#Git-工作流" class="headerlink" title="Git 工作流"></a>Git 工作流<a target="_blank" rel="noopener" href="https://wklchris.github.io/blog/Git/Branch.html#git"></a></h3><p>Git Workflow总是维护 master （稳定分支，供生产环境使用）与 dev （开发分支）两个长期分支。这种工作流的开发历史非常清晰，适用于以提供新功能为主的产品发布。</p>
+<p>*Git 工作流中推荐使用 –no-ff 参数进行分支合并，即“非 fast-forward 式”合并。这样 master 与 dev 的分支历史都能得到较好的保留。</p>
+<p>Git 工作流还建议使用三种支持性的分支，分别是：</p>
+<ol>
+<li><p>特性分支（Feature branches）：用来添加特性。这类分支从 dev 分支分岔出来，并在合适的时候合并回 dev 分支（或者被抛弃）。特性分支 <strong>不应当被推送到远程仓库</strong> 。一个典型的特性分支操作流程是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 新建特性分支进行开发</span><br><span class="line">$ git checkout feature-foo</span><br><span class="line">$ git commit ...</span><br><span class="line"></span><br><span class="line"># 合并回 dev 分支</span><br><span class="line">$ git checkout dev</span><br><span class="line">$ git merge --no-ff feature-foo</span><br><span class="line"></span><br><span class="line"># 删除本地 feature 分支，并将本地 dev 分支推送到远程</span><br><span class="line">$ git branch -d feature-foo</span><br><span class="line">$ git push origin dev</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>发布分支（Release branches）：用来确定分布版本，一般以 release-x.y.z 来命名。发布分支上可能进行较小的修复，以及元数据的更新（比如版本号）。一个典型的发布分支操作是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 新建发布分支</span><br><span class="line">$ git checkout -b release-1.1</span><br><span class="line">$ ./update-version.py 1.1 # 一些元数据更改</span><br><span class="line">$ git commit -m &quot;Update to v1.1&quot;</span><br><span class="line"></span><br><span class="line"># 合并到 master 并添加标签，以完成发布</span><br><span class="line">$ git checkout master</span><br><span class="line">$ git merge --no-ff release-1.1</span><br><span class="line">$ git tag -a 1.1</span><br><span class="line"></span><br><span class="line"># 将这部分更改更新到 dev 分支</span><br><span class="line">$ git checkout dev</span><br><span class="line">$ git merge --no-ff release-1.1</span><br><span class="line">... (修复可能存在的冲突)</span><br><span class="line">$ git branch -d release-1.1</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>热修复分支（Hotfix branches）：热修复分支是从 master 分支分岔出的，为了对生产环境（即 master 分支）的问题进行修复。因此，它在结束时会被直接合并到 master 分支来完成热修复。它一般用 hotfix-x.y.z 的方式命名，并在完成后更新生产环境的版本号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 新建热修复分支，指定从 master 分岔</span><br><span class="line">$ git checkout -b hotfix-1.1.1 master</span><br><span class="line"></span><br><span class="line"># 记得更新版本号元数据</span><br><span class="line">$ ./update-version.py 1.1.1</span><br><span class="line">$ ... (进行热修复)</span><br><span class="line">$ git commit -m &quot;Hotfix a severe bug of ...&quot;</span><br><span class="line"></span><br><span class="line"># 将热修复分支部署到 master 分支生产环境，并添加标签</span><br><span class="line">$ git checkout master</span><br><span class="line">$ git merge --no-ff hotfix-1.1.1</span><br><span class="line">$ git tag -a 1.1.1</span><br><span class="line"></span><br><span class="line"># 将热修分分支的更新合并到 dev 分支（或发行分支，视情形而定）</span><br><span class="line">$ git checkout dev</span><br><span class="line">$ git merge --no-ff hotfix-1.1.1</span><br><span class="line">$ git branch -d hotfix-1.1.1</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Github-工作流"><a href="#Github-工作流" class="headerlink" title="Github 工作流"></a>Github 工作流</h3><p>作为 Git 工作流的简化， Github Workflow维护 master 这一个分支作为长期分支。每次需要更新，都从 master 分支分岔出一个新的分支，并在新的分支工作完成后，合并回 master 分支（之后该新分支就可以删除）。在多人项目中，在把新分支合并回 master 分支前，往往需要提交 pull request 并与其他人讨论新分支的代码。</p>
+<p>Github 工作流适合于版本号不重要或功能滚动更新的产品（例如网站）。这类产品的 dev 分支以极高的频率向 master 分支合并，因此两者 的差异并不大，无须维护两个长期分支。</p>
+<h2 id="变基-：rebase"><a href="#变基-：rebase" class="headerlink" title="变基*：rebase"></a>变基*：rebase</h2><p>注解</p>
+<p>本节是一个选读章节，内容的实用性可能不高。我个人基本不使用变基操作。</p>
+<p>变基实质上是与三路合并操作相关的一个操作，不过一般来说并不常用。</p>
+<h3 id="变基的使用场景"><a href="#变基的使用场景" class="headerlink" title="变基的使用场景"></a>变基的使用场景</h3><p>简单地说，变基修改了版本历史，将不同分支的提交在后期用移花接木的方式加入到主分支中去，使得主分支之外的分支仿佛从未出现过。还是上文的那个例子：假设 master 分支上的提交 C4、dev 分支上的 C5、共同祖先 C2 需要处理合并问题，变基的做法是将 C3 和 C5 的内容与 C4 做比较，然后在 C4 之后新建一个新的包含 C5 中所有改动的 C5’。之前的 dev 分支就不需要再管了，整个项目在分叉点后依次是 C2, C4, C3’, C5’，它们都位于 master 分支上。</p>
+<p>变基的命令是 rebase ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout dev</span><br><span class="line">$ git rebase master</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>上面的命令之后，dev 的指针指向 C5’，但 master 的指针仍位于 C4。因此还需要一个快进合并：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git merge dev</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这样就算完成了基础的变基操作。</p>
+<p>一个更复杂的变基场景是，如果说 dev 分支内部还有一个 next 分支，你想将 next 分支中的改动变基到 master，但不对 dev 分支进行操作。那么使用 –onto 选项：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase --onto master dev next</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="变基的风险"><a href="#变基的风险" class="headerlink" title="变基的风险"></a>变基的风险</h3><p>重要</p>
+<p>忠告： <strong>不要对本地仓库外存在副本的分支进行变基</strong> 。</p>
+<p>想象一下你拉取了一个远程仓库，做了一些改动，准备推送时却发现你的同事进行了变基操作并先于你推送了。你没有办法，只能重新取回仓库，尝试合并。</p>
+<p>这会发生什么呢？变基操作实质上从历史中“清除”了一些节点，但由于你的本地仓库仍存在这些节点，你的第二次合并操作就会将这些节点重新加回到 git 快照中去。就像上一节的例子，你会既有已变基的 master 分支上的 C5’，又有 dev 分支（可能已经被你同事从远程仓库删除了）里的 C3 &lt;- C5 这部分提交；你的 merge 操作会令人困惑，因为在别人看来 C5 和 C5’ 的快照实质上是一模一样的。</p>
+<p>最后的结果就是，你同事的变基操作没有任何效果，因为你又将 dev 分支的历史给加回去了。然后你把这乱糟糟的东西推送到远程仓库，大概没有人第二天能从提交历史中看懂你们两人究竟干了什么。</p>
+<p>如果，我是说万一，你的同事真的做了这样的事情，你应该在第二次取回时使用 –rebase 选项：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull --rebase ...</span><br></pre></td></tr></table></figure>
+
+
+
+<p>但这个命令也不总是保险的；根本的解决办法是，统一团队的分叉处理方式： <strong>要么都使用合并，要么都使用变基</strong> 。</p>
+<h3 id="变基改写日志"><a href="#变基改写日志" class="headerlink" title="变基改写日志"></a>变基改写日志</h3><p>通过变基命令可以改写提交日志。它可以将多个提交压缩为一个，或者将一个提交拆分为多个。这里不展开介绍方法，但记住，使用交互式的命令并遵循提示将很容易完成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase -i HEAD~3</span><br></pre></td></tr></table></figure>
+
+
+
+<p>其中 HEAD~3 表示修改倒数第三次及以后的提交（但实际上会定位到它的父提交）。</p>
+<h3 id="合并与变基的争论"><a href="#合并与变基的争论" class="headerlink" title="合并与变基的争论*"></a>合并与变基的争论*</h3><p>有的开发者认为，合并能够还原真实的开发流程，因此我们应当使用合并操作——改变提交历史和撒谎没什么两样.</p>
+<p>另一部分人则认为，没有人在意你们怎么开发的，应该让项目外的人查看你的仓库历史时能够迅速看懂（而不是迷失在一堆分支中）。提交历史就像一本使用手册，需要不断修订。如果新版本手册总是比旧版本要好，那旧版本手册当然应该被抛弃。因此他们支持变基。</p>
+<p>这当然是一件没有获胜方的争论。坦白地说，我个人是合并的支持者，因为我认为变基会干扰开发思维的连贯性。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://bianhua-12.github.io">Bianhua</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://bianhua-12.github.io/2022/05/10/git/">http://bianhua-12.github.io/2022/05/10/git/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bianhua-12.github.io" target="_blank">小帅问你行不行的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%84%E9%80%A0/">软件构造</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2022/05/27/sc_lab2/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Lab2踩过的坑</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/06/13/ADTANDOOP/" title="ADT与OOP"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-14</div><div class="title">ADT与OOP</div></div></a></div><div><a href="/2022/06/08/sc/" title="软件构造lab1"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-08</div><div class="title">软件构造lab1</div></div></a></div><div><a href="/2022/05/27/sc_lab2/" title="Lab2踩过的坑"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-28</div><div class="title">Lab2踩过的坑</div></div></a></div><div><a href="/2022/06/09/%E5%8D%8F%E5%8F%98/" title="java中的逆变与协变"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-10</div><div class="title">java中的逆变与协变</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Bianhua</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bianhua-12"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#commit%E4%B8%AD%E7%9A%84%E7%BB%86%E8%8A%82"><span class="toc-number">1.</span> <span class="toc-text">commit中的细节</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%EF%BC%9Abranch"><span class="toc-number">2.</span> <span class="toc-text">分支：branch</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-number">2.1.</span> <span class="toc-text">创建分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%9Acheckout"><span class="toc-number">2.2.</span> <span class="toc-text">切换分支：checkout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF%EF%BC%9Amerge"><span class="toc-number">2.3.</span> <span class="toc-text">合并分支：merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF%EF%BC%9Abranch-d"><span class="toc-number">2.4.</span> <span class="toc-text">删除分支：branch -d</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF%E5%88%97%E8%A1%A8%EF%BC%9Abranch-v"><span class="toc-number">2.5.</span> <span class="toc-text">查看分支列表：branch -v</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%EF%BC%9A%E8%B7%9F%E8%B8%AA%E5%88%86%E6%94%AF%EF%BC%88%E4%B8%8A%E6%B8%B8%E5%88%86%E6%94%AF%EF%BC%89"><span class="toc-number">2.6.</span> <span class="toc-text">远程：跟踪分支（上游分支）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%A4%84%E7%90%86"><span class="toc-number">2.7.</span> <span class="toc-text">冲突处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-number">2.8.</span> <span class="toc-text">分支工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%83%81"><span class="toc-number">2.8.1.</span> <span class="toc-text">Git 工作流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github-%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-number">2.8.2.</span> <span class="toc-text">Github 工作流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%9F%BA-%EF%BC%9Arebase"><span class="toc-number">2.9.</span> <span class="toc-text">变基*：rebase</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E5%9F%BA%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">2.9.1.</span> <span class="toc-text">变基的使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E5%9F%BA%E7%9A%84%E9%A3%8E%E9%99%A9"><span class="toc-number">2.9.2.</span> <span class="toc-text">变基的风险</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E5%9F%BA%E6%94%B9%E5%86%99%E6%97%A5%E5%BF%97"><span class="toc-number">2.9.3.</span> <span class="toc-text">变基改写日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E4%B8%8E%E5%8F%98%E5%9F%BA%E7%9A%84%E4%BA%89%E8%AE%BA"><span class="toc-number">2.9.4.</span> <span class="toc-text">合并与变基的争论*</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/13/ADTANDOOP/" title="ADT与OOP"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ADT与OOP"/></a><div class="content"><a class="title" href="/2022/06/13/ADTANDOOP/" title="ADT与OOP">ADT与OOP</a><time datetime="2022-06-13T15:00:00.000Z" title="发表于 2022-06-14 00:00:00">2022-06-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/09/%E5%8D%8F%E5%8F%98/" title="java中的逆变与协变"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java中的逆变与协变"/></a><div class="content"><a class="title" href="/2022/06/09/%E5%8D%8F%E5%8F%98/" title="java中的逆变与协变">java中的逆变与协变</a><time datetime="2022-06-09T15:00:00.000Z" title="发表于 2022-06-10 00:00:00">2022-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/" title="TJCTF 2022(crypto)(老年人复建)"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TJCTF 2022(crypto)(老年人复建)"/></a><div class="content"><a class="title" href="/2022/06/08/%E8%80%81%E5%B9%B4%E4%BA%BA%E5%A4%8D%E5%BB%BA%E4%B9%8Btjctf2022/" title="TJCTF 2022(crypto)(老年人复建)">TJCTF 2022(crypto)(老年人复建)</a><time datetime="2022-06-08T14:09:21.626Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/sc/" title="软件构造lab1"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件构造lab1"/></a><div class="content"><a class="title" href="/2022/06/08/sc/" title="软件构造lab1">软件构造lab1</a><time datetime="2022-06-08T14:09:21.606Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/csapp_lab4/" title="计算机系统LAB4"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机系统LAB4"/></a><div class="content"><a class="title" href="/2022/06/08/csapp_lab4/" title="计算机系统LAB4">计算机系统LAB4</a><time datetime="2022-06-08T14:09:21.585Z" title="发表于 2022-06-08 23:09:21">2022-06-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Bianhua</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
