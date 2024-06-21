@@ -3,8 +3,7 @@ favicon: /img/favicon.png
 avatar: /img/avatar.jpg
 # if author sets in hexo_config, this string doesn't work
 author: 'Shuaihang Chen'
-author_bio: 'PHD student, HIT, SCIR\n
-            '
+author_bio: 'PHD student, HIT, SCIR'
 
 since: 2024
 
@@ -31,10 +30,11 @@ social_links:
   # fab fa-stack-overflow: /
   # fab fa-linkedin: /
   # fab fa-weibo: /
-  # fab fa-weixin: /
+  # fab fa-weixin: /bianhua-12.github.io/shchen@ir.hit.edu.cn%20/
   # fab fa-qq: /
-  fas fa-envelope: shchen@ir.hit.edu.cn / #E-mail
+  fas fa-envelope:  mailto:shchen@ir.hit.edu.cn  #E-mail
   # fas fa-rss: /  #rss
+  # mailto: shchen@ir.hit.edu.cn
   
 
 # Additional social_links，额外添加自定义链接，可显示链接名称
@@ -43,7 +43,7 @@ e_social:
   enable: false
 e_social_links:
   Google Scholar: / || fas fa-graduation-cap
-  ORCID: / || fab fa-orcid
+  # ORCID: / || fab fa-orcid
 
 # CV download link
 cv_dl:
