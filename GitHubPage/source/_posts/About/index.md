@@ -7,4 +7,4 @@ academia: true
 I am a PHD student in DT Group of Research Center for Social Computing and Information Retrieval, Computer Science([SCIR-DT](http://ir.hit.edu.cn/1979.html)).  Harbin Institute of Technology, China, supervised by [Prof.Wei-nan Zhang](https://homepage.hit.edu.cn/zhangweinan).
 
 Currently my work focuses on multi-generative agent simulation like **Fig1** .I am also committed to advancing my knowledge in mathematics and sophisticated algorithms.
-![](/images/whiteboard_exported_image.png)
+![Fig1](/images/interest.png)
