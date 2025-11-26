@@ -1,9 +1,9 @@
 favicon: /img/favicon.png
 # Change to your profile picture
-avatar: /img/avatar.jpg
+avatar: /img/profile.png
 # if author sets in hexo_config, this string doesn't work
 author: 'Shuaihang Chen'
-author_bio: 'PHD student, HIT, SCIR'
+author_bio: "PhD student \n ZGCA & HIT"
 
 since: 2024
 
@@ -12,7 +12,9 @@ since: 2024
 # 可以选择外链或其他页面
 menu:
   About: /#About
-  # Blog: /Blog # https://bianhua-12.github.io/
+  Research: /research
+  Blog: /Blog
+  
 
 # flink picture will load if avator link calls on error
 loading_bg:
@@ -24,7 +26,7 @@ loading_bg:
 social:
   enable: true
 social_links:
-  # fab fa-twitter: /
+  fab fa-twitter: https://x.com/shuaihangEAI/
   # fab fa-facebook-square: /
   fab fa-github: https://github.com/bianhua-12/
   # fab fa-stack-overflow: /
@@ -47,7 +49,7 @@ e_social_links:
 
 # CV download link
 cv_dl:
-  enable: true
+  enable: false
   dir: /attaches/CV of Shuaihang Chen.pdf
   description: My Detail CV.
 
