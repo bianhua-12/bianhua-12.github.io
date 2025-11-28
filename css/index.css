@@ -1,3 +1,39 @@
+.author-bio {
+  white-space: pre-line;
+}
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+  margin: 1.6rem 0;
+}
+.project-card {
+  display: block;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid #f2f3f3;
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 4px 8px 6px rgba(7,17,27,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px 8px rgba(7,17,27,0.1);
+}
+.project-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 2rem;
+}
+.project-card p {
+  margin: 0 0 0.6rem;
+  font-size: 1.6rem;
+}
+.project-link {
+  font-size: 1.4rem;
+  color: #1353d7;
+}
 .page pre,
 .page .highlight {
   overflow: auto;
