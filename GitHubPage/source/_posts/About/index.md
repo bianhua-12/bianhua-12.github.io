@@ -4,10 +4,9 @@ date: 2024-06-21 02:37:12
 academia: true
 --- 
 # About
-I am a PHD student in DT Group of Research Center for Social Computing and Information Retrieval, Computer Science([SCIR-DT](https://hit-scir-dt.github.io/page/)).  Harbin Institute of Technology, China, supervised by [Prof.Wei-nan Zhang](https://homepage.hit.edu.cn/zhangweinan).
 
-Before that, I have recieved my B.S. in Software Engineneering from Harbin Institute of Technology.
+I am currently conducting research at Zhongguancun Academy, supervised by [Chao Yu](https://nicsefc.ee.tsinghua.edu.cn/people/ChaoYu).
 
-Recently, I will continue my research in Zhongguancun Academy, supervised by [Chao Yu](https://nicsefc.ee.tsinghua.edu.cn/people/ChaoYu)
+My research focuses on reinforcement learning for VLA (Vision-Language-Action) models.
 
-Currently my work focuses on RL on VLA(Vision Language Action) model.  
+I am a PhD student in the DT Group at SCIR-DT, Harbin Institute of Technology (HIT), supervised by [Prof. Wei-Nan Zhang](https://homepage.hit.edu.cn/zhangweinan).
