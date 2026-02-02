@@ -1,0 +1,2115 @@
+{
+  "version": "2.6",
+  "children": [
+    {
+      "type": "frame",
+      "id": "tHjBz",
+      "x": -1224.2727272727275,
+      "y": 493.49999999999955,
+      "name": "Portfolio - Simple Footer",
+      "clip": true,
+      "width": 1440,
+      "height": 2991,
+      "fill": "#f9faffff",
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "X4D5r",
+          "x": 624,
+          "y": 2809,
+          "name": "footer / icons",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1
+          },
+          "layout": "vertical",
+          "gap": 32,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "EqVio",
+              "name": "icons",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KJrFw",
+                  "name": "ph:instagram-logo-fill",
+                  "clip": true,
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "color",
+                    "color": "#ffffffff",
+                    "enabled": false
+                  },
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 0.1874999850988388
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "fJzmD",
+                      "x": 5.25,
+                      "y": 5.25,
+                      "name": "Vector",
+                      "geometry": "M132 100c0 6.329-1.87677 12.51587-5.39297 17.77824-3.51621 5.26238-8.51393 9.3639-14.36117 11.78591-5.84723 2.422-12.28136 3.05571-18.48875 1.82098-6.20739-1.23472-11.90925-4.28244-16.38453-8.75772-4.47528-4.47528-7.52299-10.17713-8.75771-16.38452-1.23473-6.20739-0.60102-12.64153 1.82098-18.48876 2.422-5.84724 6.52353-10.84495 11.78591-14.36115 5.26238-3.51621 11.44924-5.39298 17.77824-5.39298 8.48392 0.0098 16.61757 3.38435 22.61661 9.3834 5.99904 5.99905 9.37359 14.13268 9.38339 22.6166z m68-44l0 88c-0.01694 14.84692-5.92236 29.0809-16.42073 39.57927-10.49837 10.49837-24.73235 16.40379-39.57927 16.42073l-88 0c-14.84692-0.01694-29.0809-5.92236-39.57927-16.42073-10.49837-10.49837-16.40379-24.73235-16.42073-39.57927l0-88c0.01694-14.84692 5.92236-29.0809 16.42073-39.57927 10.49837-10.49837 24.73234-16.40379 39.57927-16.42073l88 0c14.84692 0.01694 29.0809 5.92236 39.57927 16.42073 10.49837 10.49837 16.40379 24.73234 16.42073 39.57927l0 0z m-52 44c0-9.4935-2.81516-18.77381-8.08946-26.66737-5.27431-7.89356-12.77088-14.04583-21.54174-17.67884-8.77085-3.63301-18.42205-4.58357-27.73313-2.73148-9.31109 1.85209-17.86387 6.42364-24.57679 13.13657-6.71292 6.71292-11.28448 15.2657-13.13657 24.57679-1.85209 9.31109-0.90153 18.96228 2.73148 27.73313 3.63301 8.77086 9.78528 16.26743 17.67884 21.54174 7.89356 5.2743 17.17387 8.08946 26.66737 8.08946 12.72601-0.0143 24.92669-5.07602 33.92534-14.07466 8.99864-8.99865 14.06036-21.19933 14.07466-33.92534l0 0z m16-52c0-2.37338-0.7038-4.69345-2.02237-6.66684-1.31857-1.97339-3.19272-3.51146-5.38544-4.41971-2.19271-0.90825-4.6055-1.14589-6.93327-0.68287-2.32777 0.46302-4.46597 1.60591-6.1442 3.28414-1.67822 1.67823-2.82112 3.81642-3.28414 6.14419-0.46303 2.32777-0.22538 4.74057 0.68287 6.93329 0.90825 2.19271 2.44632 4.06686 4.41971 5.38544 1.97339 1.31858 4.29346 2.02236 6.66684 2.02236 3.1826 0 6.23483-1.26428 8.48528-3.51472 2.25044-2.25044 3.51472-5.30269 3.51472-8.48528z",
+                      "fill": "#25282bff",
+                      "width": 37.5,
+                      "height": 37.5,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 0.1874999850988388
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6cDFT",
+                  "name": "bi:linkedin",
+                  "clip": true,
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "color",
+                    "color": "#ffffffff",
+                    "enabled": false
+                  },
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 3
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "Sfite",
+                      "x": 5,
+                      "y": 5,
+                      "name": "Group",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "Zmv2s",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Vector",
+                          "geometry": "M0 1.146c0-0.633 0.526-1.146 1.175-1.146l13.65 0c0.649 0 1.175 0.513 1.175 1.146l0 13.708c0 0.633-0.526 1.146-1.175 1.146l-13.65 0c-0.649 0-1.175-0.513-1.175-1.146l0-13.708z m4.943 12.248l0-7.225-2.401 0 0 7.225 2.401 0z m-1.2-8.212c0.837 0 1.358-0.554 1.358-1.248-0.015-0.709-0.52-1.248-1.342-1.248-0.822 0-1.359 0.54-1.359 1.248 0 0.694 0.521 1.248 1.327 1.248l0.016 0 0 0z m4.908 8.212l0-4.035c0-0.216 0.016-0.432 0.08-0.586 0.173-0.431 0.568-0.878 1.232-0.878 0.869 0 1.216 0.662 1.216 1.634l0 3.865 2.401 0 0-4.144c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845 0.7-2.165 1.193l0 0.025-0.016 0c0.00531-0.00835 0.01064-0.01668 0.016-0.025l0-1.022-2.4 0c0.03 0.678 0 7.225 0 7.225l2.4 0z",
+                          "fill": "#25282bff",
+                          "width": 38,
+                          "height": 38,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2.125
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "yCh2L",
+                  "name": "bi:envelope-fill",
+                  "clip": true,
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "color",
+                    "color": "#ffffffff",
+                    "enabled": false
+                  },
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 3
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "2yMmM",
+                      "x": 3.0000009536743164,
+                      "y": 8.000003814697266,
+                      "name": "Group",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "CQDB5",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Vector",
+                          "geometry": "M0.05 1.555c0.10082-0.44176 0.34866-0.83619 0.70292-1.11869 0.35427-0.2825 0.79396-0.43634 1.24708-0.43631l12 0c0.45312-0.00003 0.89281 0.1538 1.24708 0.43631 0.35427 0.2825 0.6021 0.67693 0.70292 1.11869l-7.95 4.859-7.95-4.859z m-0.05 1.142l0 7.104 5.803-3.558-5.803-3.546z m6.761 4.133l-6.57 4.027c0.16233 0.34229 0.41853 0.63143 0.73878 0.83378 0.32025 0.20235 0.69139 0.30958 1.07022 0.30922l12 0c0.37876 0.00008 0.74976-0.10739 1.06983-0.30991 0.32007-0.20252 0.57605-0.49177 0.73817-0.83409l-6.57-4.027-1.238 0.757-1.239-0.757 0 0.001z m3.436-0.586l5.803 3.557 0-7.104-5.803 3.546 0 0.001z",
+                          "fillRule": "evenodd",
+                          "fill": "#25282bff",
+                          "width": 42,
+                          "height": 32,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2.499999523162842
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "TueCm",
+              "name": "Madelyn Torff 2021",
+              "fill": "#828282ff",
+              "content": "Shuaihang Chen 2024–2026",
+              "fontFamily": "Nunito",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "d1Bnx",
+          "x": 720,
+          "y": 0,
+          "name": "image",
+          "clip": true,
+          "width": 720,
+          "height": 629,
+          "fill": {
+            "type": "color",
+            "color": "#ffffffff",
+            "enabled": false
+          },
+          "stroke": {
+            "align": "inside",
+            "thickness": 1
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "path",
+              "id": "au92o",
+              "x": 0,
+              "y": -248,
+              "name": "yellow-bg",
+              "geometry": "M482.77667 0.6609c112.28443 4.71596 230.39698 41.60176 298.95502 118.39717 63.38959 71.00599 20.79712 171.83036 38.90393 260.0561 14.55713 70.92968 68.88702 133.84701 56.55939 205.08993-13.65741 78.92774-57.19977 154.24841-127.68994 205.98175-73.82734 54.18256-171.61023 99.70905-266.7284 83.48548-92.19162-15.72437-120.91009-118.84833-199.67615-163.03632-86.18121-48.34796-236.43226-21.85046-275.82539-103.72174-38.59059-80.20331 87.70301-150.65625 112.98868-234.70398 28.00929-93.10089-30.20483-205.57596 41.61429-279.18515 74.40599-76.26054 205.43458-97.21274 320.89857-92.36324z",
+              "fillRule": "evenodd",
+              "fill": "#fdc435ff",
+              "width": 777,
+              "height": 877,
+              "stroke": {
+                "align": "center",
+                "thickness": 1
+              }
+            },
+            {
+              "type": "group",
+              "id": "jcu3W",
+              "x": -3.501237983982719e-7,
+              "y": -248.00000001678814,
+              "name": "image",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "rVYni",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Vector",
+                  "geometry": "M426.75476 0.6609c99.25482 4.71596 203.6615 41.60176 264.26398 118.39717 29.12689 36.90955 32.94024 81.87606 32.1344 128.94193-0.74439 43.4787-5.43073 88.74893 2.25506 131.11417 12.86786 70.92968 60.89337 133.84701 49.99622 205.08993-12.07257 78.92774-50.56226 154.24841-112.87268 205.98175-65.26032 54.18256-151.69641 99.70905-235.77698 83.48548-81.49359-15.72437-106.87958-118.84833-176.50551-163.03632-76.18066-48.34796-208.99642-21.85046-243.81833-103.72174-34.1125-80.20331 77.52586-150.65625 99.87735-234.70398 10.47913-39.40439 7.30492-82.27936 4.97089-124.20929-3.1806-57.13811-4.80101-112.52132 31.81444-154.97586 65.77185-76.26054 181.59573-97.21274 283.66116-92.36324z",
+                  "fillRule": "evenodd",
+                  "fill": "#ffc637ff",
+                  "width": 777,
+                  "height": 877,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1
+                  }
+                },
+                {
+                  "type": "rectangle",
+                  "id": "H3jJZ",
+                  "x": 3.5012385524169076e-7,
+                  "y": 248.00000001678814,
+                  "name": "pexels-artem-beliaikin-1832323-removebg-preview",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "/img/profile.png",
+                    "mode": "stretch"
+                  },
+                  "width": 720,
+                  "height": 629,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uUKmy",
+          "x": 0,
+          "y": 0,
+          "name": "header",
+          "width": 1440,
+          "height": 56,
+          "fill": {
+            "type": "color",
+            "color": "#f9faffff",
+            "enabled": false
+          },
+          "stroke": {
+            "align": "inside",
+            "thickness": 1
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "QK3H0",
+              "x": 120,
+              "y": 12,
+              "name": "Shuaihang Chen",
+              "fill": "#25282bff",
+              "content": "Shuaihang Chen",
+              "lineHeight": 1.7999999523162842,
+              "fontFamily": "Comfortaa",
+              "fontSize": 18,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "acC8c",
+              "x": 1029,
+              "y": 14,
+              "name": "nav",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "gap": 48,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "iI78E",
+                  "name": "tab / default",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "N3ppj",
+                      "name": "Sobre",
+                      "fill": "#25282bff",
+                      "content": "About",
+                      "lineHeight": 1.5555555555555556,
+                      "fontFamily": "Raleway",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "2OoTm",
+                  "name": "tab / default",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "1mNmw",
+                      "name": "Sobre",
+                      "fill": "#25282bff",
+                      "content": "Research",
+                      "lineHeight": 1.5555555555555556,
+                      "fontFamily": "Raleway",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EwYqY",
+                  "name": "tab / default",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BMdYM",
+                      "name": "Sobre",
+                      "fill": "#25282bff",
+                      "content": "Blog",
+                      "lineHeight": 1.5555555555555556,
+                      "fontFamily": "Raleway",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "0wWiE",
+          "x": 222,
+          "y": 773,
+          "name": "projects",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1
+          },
+          "layout": "vertical",
+          "gap": 80,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "QFlFl",
+              "name": "Frame 3351",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "vertical",
+              "gap": 4,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "56Qu8",
+                  "name": "Text",
+                  "fill": "#25282bff",
+                  "content": "Research",
+                  "lineHeight": 1.5,
+                  "textAlign": "center",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 48,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "tpLS3",
+                  "name": "Rectangle 19",
+                  "fill": "#fdc435ff",
+                  "width": 100,
+                  "height": 4,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eH9B9",
+              "name": "project1",
+              "reusable": true,
+              "clip": true,
+              "width": 992,
+              "height": 524,
+              "cornerRadius": 24,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#7090b01a",
+                "offset": {
+                  "x": 0,
+                  "y": 6
+                },
+                "blur": 56
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NGAbN",
+                  "name": "project-nfo",
+                  "width": 496,
+                  "height": 524,
+                  "fill": "#ffffffff",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ewQ0z",
+                      "x": 50.4406852722168,
+                      "y": 146.5,
+                      "name": "Frame 3350",
+                      "width": 406.677978515625,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      },
+                      "layout": "vertical",
+                      "gap": 24,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "KURhX",
+                          "name": "Text",
+                          "fill": "#25282bff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Project Name",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 40,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vYwAk",
+                          "name": "Text",
+                          "fill": "#828282ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Nunito",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "pieSB",
+                          "name": "botão / secudário",
+                          "cornerRadius": 24,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#25282bff"
+                          },
+                          "padding": [
+                            8,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "G8GB2",
+                              "name": "Text",
+                              "fill": "#25282bff",
+                              "content": "View Project",
+                              "lineHeight": 1.5,
+                              "fontFamily": "Roboto",
+                              "fontSize": 18,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "qcu97",
+                  "name": "pexels-elly-fairytale-3823207 1",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "",
+                    "mode": "stretch"
+                  },
+                  "width": 496,
+                  "height": 526,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 0.24124513566493988
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "T4xdu",
+              "name": "project2",
+              "clip": true,
+              "height": 524,
+              "cornerRadius": 24,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#7090b01a",
+                "offset": {
+                  "x": 0,
+                  "y": 6
+                },
+                "blur": 56
+              },
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "dvGNc",
+                  "name": "Rectangle 7",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "",
+                    "mode": "fill"
+                  },
+                  "width": 496,
+                  "height": 524,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "f1klu",
+                  "name": "project-nfo",
+                  "width": 496,
+                  "height": 524,
+                  "fill": "#ffffffff",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "1h2HI",
+                      "x": 50.4406852722168,
+                      "y": 160,
+                      "name": "Frame 3350",
+                      "width": 406.677978515625,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      },
+                      "layout": "vertical",
+                      "gap": 24,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "S6Pkk",
+                          "name": "Text",
+                          "fill": "#25282bff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Project Name",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 40,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "C4KG1",
+                          "name": "Text",
+                          "fill": "#828282ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "What was your role, your deliverables, if the project was personal, freelancing.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Nunito",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "aIgQ5",
+                          "name": "botão / secudário",
+                          "cornerRadius": 24,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#25282bff"
+                          },
+                          "padding": [
+                            8,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "aJmY7",
+                              "name": "Text",
+                              "fill": "#25282bff",
+                              "content": "View Project",
+                              "lineHeight": 1.5,
+                              "fontFamily": "Roboto",
+                              "fontSize": 18,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "1jucH",
+              "name": "project3",
+              "clip": true,
+              "height": 524,
+              "cornerRadius": 24,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#7090b01a",
+                "offset": {
+                  "x": 0,
+                  "y": 6
+                },
+                "blur": 56
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "1dBfa",
+                  "name": "project-nfo",
+                  "width": 496,
+                  "height": 524,
+                  "fill": "#ffffffff",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "N58yK",
+                      "x": 50.4406852722168,
+                      "y": 160,
+                      "name": "Frame 3350",
+                      "width": 406.677978515625,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      },
+                      "layout": "vertical",
+                      "gap": 24,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ghhxj",
+                          "name": "Text",
+                          "fill": "#25282bff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Project Name",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 40,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "cnoyi",
+                          "name": "Text",
+                          "fill": "#828282ff",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "You can also add in this description the type of the project, if it was for web, mobile, electron.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Nunito",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "UmjI8",
+                          "name": "botão / secudário",
+                          "cornerRadius": 24,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#25282bff"
+                          },
+                          "padding": [
+                            8,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "0Y9v5",
+                              "name": "Text",
+                              "fill": "#25282bff",
+                              "content": "View Project",
+                              "lineHeight": 1.5,
+                              "fontFamily": "Roboto",
+                              "fontSize": 18,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "BhJ71",
+                  "name": "Rectangle 7",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "",
+                    "mode": "fill"
+                  },
+                  "width": 496,
+                  "height": 524,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pLXg7",
+          "x": 120,
+          "y": 110,
+          "name": "intro",
+          "clip": true,
+          "width": 486,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1.09375
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "akhAq",
+              "name": "content",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "EAq9O",
+                  "name": "Title",
+                  "fill": "#25282bff",
+                  "textGrowth": "fixed-width",
+                  "width": 486,
+                  "content": "Hello, my name is Shuaihang Chen",
+                  "lineHeight": 1.2000000476837158,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 64,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "LUIH1",
+                  "name": "subheadline",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZubmZ",
+                      "name": "Text",
+                      "fill": "#828282ff",
+                      "textGrowth": "fixed-width",
+                      "width": 486,
+                      "content": "PhD student at ZGCA & HIT. Working on reinforcement learning for VLA (Vision-Language-Action) models.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Nunito",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "JphJG",
+                  "name": "buttons",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "it3IM",
+                      "name": "button / primary",
+                      "fill": "#fdc435ff",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      },
+                      "padding": [
+                        8,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "yBNp4",
+                          "name": "Text",
+                          "fill": "#25282bff",
+                          "content": "Research",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Roboto",
+                          "fontSize": 18,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wbdzj",
+                      "name": "button / secondary",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#25282bff"
+                      },
+                      "padding": [
+                        8,
+                        24
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "sK6pb",
+                          "name": "Text",
+                          "fill": "#25282bff",
+                          "content": "GitHub",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Roboto",
+                          "fontSize": 18,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "mApk9",
+      "x": 351.7272727272725,
+      "y": 493.49999999999955,
+      "name": "About - Simple Footer",
+      "clip": true,
+      "width": 1440,
+      "height": 944,
+      "fill": "#f9faffff",
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "BCkMd",
+          "x": 120,
+          "y": 199,
+          "name": "about me",
+          "width": 588,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1
+          },
+          "layout": "vertical",
+          "gap": 32,
+          "children": [
+            {
+              "type": "text",
+              "id": "23M37",
+              "name": "Title",
+              "fill": "#25282bff",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "About",
+              "lineHeight": 1.5,
+              "fontFamily": "Playfair Display",
+              "fontSize": 48,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "yAbHQ",
+              "name": "Text",
+              "fill": "#828282ff",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "I am currently conducting research at Zhongguancun Academy, supervised by Chao Yu. My research focuses on reinforcement learning for VLA (Vision-Language-Action) models. I am a PhD student in the DT Group at SCIR-DT, Harbin Institute of Technology (HIT), supervised by Prof. Wei-Nan Zhang.",
+              "lineHeight": 1.5,
+              "fontFamily": "Nunito",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "FuRAE",
+              "name": "button / primary",
+              "fill": "#fdc435ff",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "padding": [
+                8,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RDWMn",
+                  "name": "Text",
+                  "fill": "#25282bff",
+                  "content": "CV",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Roboto",
+                  "fontSize": 18,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "id": "EmfO1",
+          "x": 796,
+          "y": 94,
+          "name": "bg-2",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "8BNtD",
+              "x": 0,
+              "y": 0,
+              "name": "Ellipse 1",
+              "sweepAngle": 360.00001001791264,
+              "fill": "#fdc435ff",
+              "width": 524,
+              "height": 524,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              }
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 600,
+              "id": "wOq7g",
+              "x": 0,
+              "y": 0,
+              "name": "pexels-artem-beliaikin-1832323-removebg-preview",
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "/img/profile.png",
+                "mode": "stretch"
+              },
+              "width": 524,
+              "height": 524,
+              "stroke": {
+                "align": "inside",
+                "thickness": 0.8333333134651184
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "E4kx4",
+          "x": 0,
+          "y": 0,
+          "name": "header",
+          "width": 1440,
+          "height": 56,
+          "fill": {
+            "type": "color",
+            "color": "#f9faffff",
+            "enabled": false
+          },
+          "stroke": {
+            "align": "inside",
+            "thickness": 1
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "pnV1y",
+              "x": 120,
+              "y": 12,
+              "name": "Shuaihang Chen",
+              "fill": "#25282bff",
+              "content": "Shuaihang Chen",
+              "lineHeight": 1.7999999523162842,
+              "fontFamily": "Comfortaa",
+              "fontSize": 18,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "zAthz",
+              "x": 1029,
+              "y": 14,
+              "name": "nav",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "gap": 48,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Xl7Ua",
+                  "name": "tab / default",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "hhmen",
+                      "name": "Sobre",
+                      "fill": "#25282bff",
+                      "content": "About",
+                      "lineHeight": 1.5555555555555556,
+                      "fontFamily": "Raleway",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 2,
+                      "id": "lZawq",
+                      "name": "Rectangle 11",
+                      "fill": "#25282bff",
+                      "width": "fill_container",
+                      "height": 2,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aQIBM",
+                  "name": "tab / default",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "7Y1Li",
+                      "name": "Sobre",
+                      "fill": "#25282bff",
+                      "content": "Research",
+                      "lineHeight": 1.5555555555555556,
+                      "fontFamily": "Raleway",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QYbVK",
+                  "name": "tab / default",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "VSdu6",
+                      "name": "Sobre",
+                      "fill": "#25282bff",
+                      "content": "Blog",
+                      "lineHeight": 1.5555555555555556,
+                      "fontFamily": "Raleway",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yuPRS",
+          "x": 624,
+          "y": 762,
+          "name": "footer / icons",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1
+          },
+          "layout": "vertical",
+          "gap": 32,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "S534A",
+              "name": "icons",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5SMlo",
+                  "name": "ph:instagram-logo-fill",
+                  "clip": true,
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "color",
+                    "color": "#ffffffff",
+                    "enabled": false
+                  },
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 0.1874999850988388
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "1S1zZ",
+                      "x": 5.25,
+                      "y": 5.25,
+                      "name": "Vector",
+                      "geometry": "M132 100c0 6.329-1.87677 12.51587-5.39297 17.77824-3.51621 5.26238-8.51393 9.3639-14.36117 11.78591-5.84723 2.422-12.28136 3.05571-18.48875 1.82098-6.20739-1.23472-11.90925-4.28244-16.38453-8.75772-4.47528-4.47528-7.52299-10.17713-8.75771-16.38452-1.23473-6.20739-0.60102-12.64153 1.82098-18.48876 2.422-5.84724 6.52353-10.84495 11.78591-14.36115 5.26238-3.51621 11.44924-5.39298 17.77824-5.39298 8.48392 0.0098 16.61757 3.38435 22.61661 9.3834 5.99904 5.99905 9.37359 14.13268 9.38339 22.6166z m68-44l0 88c-0.01694 14.84692-5.92236 29.0809-16.42073 39.57927-10.49837 10.49837-24.73235 16.40379-39.57927 16.42073l-88 0c-14.84692-0.01694-29.0809-5.92236-39.57927-16.42073-10.49837-10.49837-16.40379-24.73235-16.42073-39.57927l0-88c0.01694-14.84692 5.92236-29.0809 16.42073-39.57927 10.49837-10.49837 24.73234-16.40379 39.57927-16.42073l88 0c14.84692 0.01694 29.0809 5.92236 39.57927 16.42073 10.49837 10.49837 16.40379 24.73234 16.42073 39.57927l0 0z m-52 44c0-9.4935-2.81516-18.77381-8.08946-26.66737-5.27431-7.89356-12.77088-14.04583-21.54174-17.67884-8.77085-3.63301-18.42205-4.58357-27.73313-2.73148-9.31109 1.85209-17.86387 6.42364-24.57679 13.13657-6.71292 6.71292-11.28448 15.2657-13.13657 24.57679-1.85209 9.31109-0.90153 18.96228 2.73148 27.73313 3.63301 8.77086 9.78528 16.26743 17.67884 21.54174 7.89356 5.2743 17.17387 8.08946 26.66737 8.08946 12.72601-0.0143 24.92669-5.07602 33.92534-14.07466 8.99864-8.99865 14.06036-21.19933 14.07466-33.92534l0 0z m16-52c0-2.37338-0.7038-4.69345-2.02237-6.66684-1.31857-1.97339-3.19272-3.51146-5.38544-4.41971-2.19271-0.90825-4.6055-1.14589-6.93327-0.68287-2.32777 0.46302-4.46597 1.60591-6.1442 3.28414-1.67822 1.67823-2.82112 3.81642-3.28414 6.14419-0.46303 2.32777-0.22538 4.74057 0.68287 6.93329 0.90825 2.19271 2.44632 4.06686 4.41971 5.38544 1.97339 1.31858 4.29346 2.02236 6.66684 2.02236 3.1826 0 6.23483-1.26428 8.48528-3.51472 2.25044-2.25044 3.51472-5.30269 3.51472-8.48528z",
+                      "fill": "#25282bff",
+                      "width": 37.5,
+                      "height": 37.5,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 0.1874999850988388
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "thxfn",
+                  "name": "bi:linkedin",
+                  "clip": true,
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "color",
+                    "color": "#ffffffff",
+                    "enabled": false
+                  },
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 3
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "Xyq4P",
+                      "x": 5,
+                      "y": 5,
+                      "name": "Group",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "4t934",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Vector",
+                          "geometry": "M0 1.146c0-0.633 0.526-1.146 1.175-1.146l13.65 0c0.649 0 1.175 0.513 1.175 1.146l0 13.708c0 0.633-0.526 1.146-1.175 1.146l-13.65 0c-0.649 0-1.175-0.513-1.175-1.146l0-13.708z m4.943 12.248l0-7.225-2.401 0 0 7.225 2.401 0z m-1.2-8.212c0.837 0 1.358-0.554 1.358-1.248-0.015-0.709-0.52-1.248-1.342-1.248-0.822 0-1.359 0.54-1.359 1.248 0 0.694 0.521 1.248 1.327 1.248l0.016 0 0 0z m4.908 8.212l0-4.035c0-0.216 0.016-0.432 0.08-0.586 0.173-0.431 0.568-0.878 1.232-0.878 0.869 0 1.216 0.662 1.216 1.634l0 3.865 2.401 0 0-4.144c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845 0.7-2.165 1.193l0 0.025-0.016 0c0.00531-0.00835 0.01064-0.01668 0.016-0.025l0-1.022-2.4 0c0.03 0.678 0 7.225 0 7.225l2.4 0z",
+                          "fill": "#25282bff",
+                          "width": 38,
+                          "height": 38,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2.125
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "lCFfO",
+                  "name": "bi:envelope-fill",
+                  "clip": true,
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "color",
+                    "color": "#ffffffff",
+                    "enabled": false
+                  },
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 3
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "mm4iB",
+                      "x": 3.0000009536743164,
+                      "y": 8.000003814697266,
+                      "name": "Group",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "VV1K6",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Vector",
+                          "geometry": "M0.05 1.555c0.10082-0.44176 0.34866-0.83619 0.70292-1.11869 0.35427-0.2825 0.79396-0.43634 1.24708-0.43631l12 0c0.45312-0.00003 0.89281 0.1538 1.24708 0.43631 0.35427 0.2825 0.6021 0.67693 0.70292 1.11869l-7.95 4.859-7.95-4.859z m-0.05 1.142l0 7.104 5.803-3.558-5.803-3.546z m6.761 4.133l-6.57 4.027c0.16233 0.34229 0.41853 0.63143 0.73878 0.83378 0.32025 0.20235 0.69139 0.30958 1.07022 0.30922l12 0c0.37876 0.00008 0.74976-0.10739 1.06983-0.30991 0.32007-0.20252 0.57605-0.49177 0.73817-0.83409l-6.57-4.027-1.238 0.757-1.239-0.757 0 0.001z m3.436-0.586l5.803 3.557 0-7.104-5.803 3.546 0 0.001z",
+                          "fillRule": "evenodd",
+                          "fill": "#25282bff",
+                          "width": 42,
+                          "height": 32,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2.499999523162842
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "5KphO",
+              "name": "Madelyn Torff 2021",
+              "fill": "#828282ff",
+              "content": "Shuaihang Chen 2024–2026",
+              "fontFamily": "Nunito",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "themes": {
+    "Mode": [
+      "Light",
+      "Dark"
+    ]
+  },
+  "variables": {
+    "--sidebar": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#1A182E",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#939399",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#ACABB2",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-primary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F5F5F5",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#0F5FFE",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-primary-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#2A2933",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#E8E8EA",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-border": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D9D9DB",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#2B283D",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-accent": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F5F5F5",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#2B283D",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-accent-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#2A2933",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#E8E8EA",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-ring": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D9D9DB",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#2B283D",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--background": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#131124",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#2A2933",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#E8E8EA",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--card": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#1A182E",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--card-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#2A2933",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--popover": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#1A182E",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--popover-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#2A2933",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--primary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#5749F4",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#5749F4",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--primary-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--secondary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D9D9DB",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#403F51",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--secondary-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#2A2933",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--muted": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F5F5F5",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#2E2E2E",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--muted-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#616167",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#888799",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--accent": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F5f5f5",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#131124",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--accent-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "2A2933",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#F2F3F0",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--destructive": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#CC3314",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#CC3314",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--border": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#C5C5CB",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#2B283D",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--input": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#C5C5CB",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "2B283D",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--ring": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#E1E2E5"
+        },
+        {
+          "value": "#666666",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--white": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--black": {
+      "type": "color",
+      "value": "#000000"
+    },
+    "--font-primary": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Inter",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "Inter",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--font-secondary": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Inter",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "Inter",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--radius-pill": {
+      "type": "number",
+      "value": 999
+    },
+    "--color-success": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#A1E5A1",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#3B4748",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-success-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#003300",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#A1E5A1",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-warning": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFD9B2",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#53484F",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-warning-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#4D2700",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#FFD9B2",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-error": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFBFB2",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#53424F",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-error-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#590F00",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#FFBFB2",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-info": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#C9D6F0",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#404562",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-info-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#001133"
+        },
+        {
+          "value": "#B2CCFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--destructive-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF"
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--radius-m": {
+      "type": "number",
+      "value": [
+        {
+          "value": 24,
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": 24,
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--radius-l": {
+      "type": "number",
+      "value": [
+        {
+          "value": 40,
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": 40,
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--radius-xs": {
+      "type": "number",
+      "value": [
+        {
+          "value": 6,
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": 6,
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--radius-none": {
+      "type": "number",
+      "value": [
+        {
+          "value": 0,
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": 0,
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--tile": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F5F5F5",
+          "theme": {
+            "Mode": "Light"
+          }
+        },
+        {
+          "value": "#1A182E",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,601 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito:wght@400;700&family=Playfair+Display:wght@700&family=Raleway:wght@500;700&family=Roboto:wght@500&display=swap");
+
+:root {
+  --bg: #f9faff;
+  --text: #25282b;
+  --muted: #828282;
+  --accent: #fdc435;
+  --card: #ffffff;
+  --shadow: 0 6px 56px rgba(112, 144, 176, 0.1);
+  --radius: 24px;
+  --max: 1440px;
+  --pad: clamp(20px, 8vw, 120px);
+  --header-h: 56px;
+  --hero-h: clamp(420px, 43.7vw, 629px);
+  --hero-w: calc(var(--hero-h) * 1.1447); /* 720 / 629 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Nunito, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+:where(section[id]) {
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  height: var(--header-h);
+  padding: 14px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.brand {
+  font-family: Comfortaa, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navItem {
+  font-family: Raleway, system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--text);
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.navItem:hover {
+  border-bottom-color: rgba(37, 40, 43, 0.35);
+}
+
+.main {
+  flex: 1;
+}
+
+.hero {
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--pad) 10px;
+  position: relative;
+  min-height: var(--hero-h);
+}
+
+.heroContent {
+  max-width: 486px;
+  padding-top: calc(var(--header-h) + 54px);
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.2;
+}
+
+.heroSub {
+  margin: 16px 0 0;
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.heroButtons {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-family: Roboto, system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid var(--text);
+  color: var(--text);
+  background: transparent;
+}
+
+.btnPrimary {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+}
+
+.btnSecondary {
+  background: transparent;
+  border: 2px solid var(--text);
+}
+
+.link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:hover,
+.btn:hover,
+.navItem:hover,
+.brand:hover {
+  filter: brightness(0.95);
+}
+
+.heroMeta {
+  margin-top: 18px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.heroButtons {
+  margin-top: 32px;
+}
+
+.metaLink {
+  font-size: 16px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.metaLink:hover {
+  text-decoration: underline;
+}
+
+.heroImageFrame {
+  position: relative;
+  width: min(50vw, var(--hero-w));
+  height: var(--hero-h);
+  overflow: hidden;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.heroBlob {
+  position: absolute;
+  left: 0;
+  top: -39.43%;
+  width: 107.92%;
+  height: 139.5%;
+}
+
+.section {
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 64px var(--pad) 10px;
+}
+
+.sectionHeader {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+}
+
+.sectionRule {
+  width: 100px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.sectionText {
+  margin: 28px auto 0;
+  max-width: 760px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--muted);
+  text-align: center;
+}
+
+.sectionAbout {
+  padding-top: 94px;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 588px) minmax(0, 524px);
+  justify-content: space-between;
+  align-items: start;
+  gap: 32px;
+}
+
+.aboutCopy {
+  padding-top: 105px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.aboutTitle {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.aboutText {
+  font-family: Nunito, system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.aboutPara {
+  margin: 0;
+}
+
+.aboutPara + .aboutPara {
+  margin-top: 18px;
+}
+
+.inlineLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.inlineLink:hover {
+  filter: brightness(0.95);
+}
+
+.aboutArt {
+  position: relative;
+  width: 524px;
+  height: 524px;
+}
+
+.aboutCircle {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.aboutPhotoFrame {
+  position: absolute;
+  inset: 0;
+  border-radius: 600px;
+  overflow: hidden;
+}
+
+.aboutPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sectionProjects {
+  display: grid;
+  gap: 80px;
+}
+
+.projectsStack {
+  display: grid;
+  justify-items: center;
+  gap: 80px;
+}
+
+.projectCard {
+  width: min(992px, 100%);
+  height: 524px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #fff;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.projectCardReversed {
+  direction: rtl;
+}
+
+.projectCardReversed > * {
+  direction: ltr;
+}
+
+.projectInfo {
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.projectTitle {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+.projectDesc {
+  margin: 0;
+  font-family: Nunito, system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.projectCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 8px 24px;
+  border-radius: 24px;
+  border: 1px solid var(--text);
+  color: var(--text);
+  text-decoration: none;
+  font-family: Roboto, system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.projectCtaDisabled {
+  opacity: 0.55;
+}
+
+.projectMedia {
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  padding: clamp(12px, 2.2vw, 28px);
+}
+
+.projectMediaButton {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.projectMediaPlaceholder {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(135deg, rgba(37, 40, 43, 0.06), rgba(37, 40, 43, 0) 55%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55));
+}
+
+.subTitle {
+  margin: 40px 0 16px;
+  font-family: Raleway, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.cardDesc {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.footer {
+  padding: 48px 20px;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+.footerIcons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footerIcons .link {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.footerCopy {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 0;
+    padding-top: var(--header-h);
+  }
+  .heroContent {
+    padding-top: 40px;
+    max-width: none;
+  }
+  .heroImageFrame {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 24px auto 0;
+    height: auto;
+    aspect-ratio: 720 / 629;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .sectionAbout {
+    padding-top: 64px;
+  }
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+  .aboutCopy {
+    padding-top: 0;
+  }
+  .aboutArt {
+    width: min(524px, 100%);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    justify-self: center;
+  }
+  .projectCard {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .projectCardReversed {
+    direction: ltr;
+  }
+  .projectMedia {
+    min-height: 320px;
+    height: auto;
+    padding: 16px;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 20px;
+}
+
+.modalBody {
+  width: min(1100px, 95vw);
+  max-height: 92vh;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  position: relative;
+}
+
+.modalClose {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(37, 40, 43, 0.25);
+  background: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.modalImage {
+  width: 100%;
+  height: 100%;
+  max-height: 92vh;
+  display: block;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+@media (max-width: 420px) {
+  .sectionTitle {
+    font-size: 40px;
+  }
+}
