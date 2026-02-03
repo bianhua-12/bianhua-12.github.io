@@ -107,23 +107,45 @@ function ProjectCard({ project, reversed }: { project: Project; reversed?: boole
 }
 
 export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
   return (
     <div className="page">
-      <header className="header">
+      <header className="header" data-menu-open={menuOpen ? "true" : "false"}>
         <a className="brand" href="#top" aria-label="Home">
           {site.title}
         </a>
-        <nav className="nav" aria-label="Primary navigation">
-          <a className="navItem" href="#about">
-            About
-          </a>
-          <a className="navItem" href="#research">
-            Research
-          </a>
-          <a className="navItem" href="#blog">
-            Blog
-          </a>
-        </nav>
+        <div className="navArea">
+          <button
+            className="navToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span className="navToggleIcon" aria-hidden="true" />
+          </button>
+          <nav className="nav" aria-label="Primary navigation">
+            <a className="navItem" href="#about" onClick={() => setMenuOpen(false)}>
+              About
+            </a>
+            <a className="navItem" href="#research" onClick={() => setMenuOpen(false)}>
+              Research
+            </a>
+            <a className="navItem" href="#blog" onClick={() => setMenuOpen(false)}>
+              Blog
+            </a>
+          </nav>
+        </div>
       </header>
 
       <main id="top" className="main">
