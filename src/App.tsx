@@ -66,15 +66,26 @@ function ProjectCard({ project, reversed }: { project: Project; reversed?: boole
       <div className="projectInfo">
         <h3 className="projectTitle">{project.title}</h3>
         <p className="projectDesc">{project.description}</p>
-        {project.href ? (
-          <ExternalLink className="projectCta" href={project.href}>
-            View Project
-          </ExternalLink>
-        ) : (
-          <span className="projectCta projectCtaDisabled" aria-disabled="true">
-            View Project
-          </span>
-        )}
+        <div className="projectCtas">
+          {project.href ? (
+            <ExternalLink className="projectCta" href={project.href}>
+              View Project
+            </ExternalLink>
+          ) : (
+            <span className="projectCta projectCtaDisabled" aria-disabled="true">
+              View Project
+            </span>
+          )}
+          {project.paperHref ? (
+            <ExternalLink className="projectCta" href={project.paperHref}>
+              View Paper
+            </ExternalLink>
+          ) : (
+            <span className="projectCta projectCtaDisabled" aria-disabled="true">
+              View Paper
+            </span>
+          )}
+        </div>
       </div>
       <div className="projectMedia" aria-hidden="true">
         {project.imageSrc ? (

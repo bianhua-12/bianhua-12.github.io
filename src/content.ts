@@ -15,7 +15,7 @@ export const site = {
   footer: "Shuaihang Chen 2024–2026",
 };
 
-export type Card = { title: string; description: string; href?: string };
+export type Card = { title: string; description: string; href?: string; paperHref?: string };
 
 export type Project = Card & { imageSrc?: string; imageAlt?: string };
 
@@ -46,24 +46,25 @@ export const researchProjects: Project[] = [
     imageSrc: "/img/projects/rl-co.png",
     imageAlt: "RL-based Sim-Real co-training diagram",
   },
-  {
-    title: "RLinf",
-    description: "Reinforcement Learning Infrastructure for Post-training.",
-    href: site.links.rlinf,
-    imageSrc: "/img/projects/rlinf.png",
-    imageAlt: "RLinf project image",
-  },
+  // {
+  //   title: "RLinf",
+  //   description: "Reinforcement Learning Infrastructure for Post-training.",
+  //   href: site.links.rlinf,
+  //   imageSrc: "/img/projects/rlinf.png",
+  //   imageAlt: "RLinf project image",
+  // },
   
   {
     title:
-      "A Survey on LLM-based Multi-Agent System: Recent Advances and New Frontiers in Application",
+      "A Survey on LLM-based Multi-Agent System",
     description: "Survey on LLM-based multi-agent systems.",
     href: site.links.masSurvey,
+    paperHref: "https://arxiv.org/abs/2412.17481",
     imageSrc: "/img/projects/survey.png",
     imageAlt: "LLM-based multi-agent systems overview diagram",
   },
-  {
-    title: "Social Simulation",
-    description: "A project for simulating LLM based users in social media.",
-  },
+  // {
+  //   title: "Social Simulation",
+  //   description: "A project for simulating LLM based users in social media.",
+  // },
 ];

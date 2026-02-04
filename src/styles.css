@@ -444,6 +444,13 @@ body {
   color: var(--muted);
 }
 
+.projectCtas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .projectCta {
   display: inline-flex;
   align-items: center;
