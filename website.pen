@@ -514,34 +514,74 @@
                           "fontSize": 18,
                           "fontWeight": "normal"
                         },
-                        {
-                          "type": "frame",
-                          "id": "pieSB",
-                          "name": "botão / secudário",
-                          "cornerRadius": 24,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#25282bff"
-                          },
-                          "padding": [
-                            8,
-                            24
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "G8GB2",
-                              "name": "Text",
-                              "fill": "#25282bff",
-                              "content": "View Project",
-                              "lineHeight": 1.5,
-                              "fontFamily": "Roboto",
-                              "fontSize": 18,
-                              "fontWeight": "500"
-                            }
-                          ]
-                        }
+	                        {
+	                          "type": "frame",
+	                          "id": "tCqP1",
+	                          "name": "project-ctas",
+	                          "stroke": {
+	                            "align": "inside",
+	                            "thickness": 1
+	                          },
+	                          "gap": 12,
+	                          "children": [
+	                            {
+	                              "type": "frame",
+	                              "id": "pieSB",
+	                              "name": "botão / secudário",
+	                              "cornerRadius": 24,
+	                              "stroke": {
+	                                "align": "inside",
+	                                "thickness": 1,
+	                                "fill": "#25282bff"
+	                              },
+	                              "padding": [
+	                                8,
+	                                24
+	                              ],
+	                              "children": [
+	                                {
+	                                  "type": "text",
+	                                  "id": "G8GB2",
+	                                  "name": "Text",
+	                                  "fill": "#25282bff",
+	                                  "content": "View Project",
+	                                  "lineHeight": 1.5,
+	                                  "fontFamily": "Roboto",
+	                                  "fontSize": 18,
+	                                  "fontWeight": "500"
+	                                }
+	                              ]
+	                            },
+	                            {
+	                              "type": "frame",
+	                              "id": "pprB1",
+	                              "name": "botão / secudário",
+	                              "cornerRadius": 24,
+	                              "stroke": {
+	                                "align": "inside",
+	                                "thickness": 1,
+	                                "fill": "#25282bff"
+	                              },
+	                              "padding": [
+	                                8,
+	                                24
+	                              ],
+	                              "children": [
+	                                {
+	                                  "type": "text",
+	                                  "id": "pprT1",
+	                                  "name": "Text",
+	                                  "fill": "#25282bff",
+	                                  "content": "View Paper",
+	                                  "lineHeight": 1.5,
+	                                  "fontFamily": "Roboto",
+	                                  "fontSize": 18,
+	                                  "fontWeight": "500"
+	                                }
+	                              ]
+	                            }
+	                          ]
+	                        }
                       ]
                     }
                   ]
@@ -657,34 +697,74 @@
                           "fontSize": 18,
                           "fontWeight": "normal"
                         },
-                        {
-                          "type": "frame",
-                          "id": "aIgQ5",
-                          "name": "botão / secudário",
-                          "cornerRadius": 24,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#25282bff"
-                          },
-                          "padding": [
-                            8,
-                            24
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "aJmY7",
-                              "name": "Text",
-                              "fill": "#25282bff",
-                              "content": "View Project",
-                              "lineHeight": 1.5,
-                              "fontFamily": "Roboto",
-                              "fontSize": 18,
-                              "fontWeight": "500"
-                            }
-                          ]
-                        }
+	                        {
+	                          "type": "frame",
+	                          "id": "tCqP2",
+	                          "name": "project-ctas",
+	                          "stroke": {
+	                            "align": "inside",
+	                            "thickness": 1
+	                          },
+	                          "gap": 12,
+	                          "children": [
+	                            {
+	                              "type": "frame",
+	                              "id": "aIgQ5",
+	                              "name": "botão / secudário",
+	                              "cornerRadius": 24,
+	                              "stroke": {
+	                                "align": "inside",
+	                                "thickness": 1,
+	                                "fill": "#25282bff"
+	                              },
+	                              "padding": [
+	                                8,
+	                                24
+	                              ],
+	                              "children": [
+	                                {
+	                                  "type": "text",
+	                                  "id": "aJmY7",
+	                                  "name": "Text",
+	                                  "fill": "#25282bff",
+	                                  "content": "View Project",
+	                                  "lineHeight": 1.5,
+	                                  "fontFamily": "Roboto",
+	                                  "fontSize": 18,
+	                                  "fontWeight": "500"
+	                                }
+	                              ]
+	                            },
+	                            {
+	                              "type": "frame",
+	                              "id": "pprB2",
+	                              "name": "botão / secudário",
+	                              "cornerRadius": 24,
+	                              "stroke": {
+	                                "align": "inside",
+	                                "thickness": 1,
+	                                "fill": "#25282bff"
+	                              },
+	                              "padding": [
+	                                8,
+	                                24
+	                              ],
+	                              "children": [
+	                                {
+	                                  "type": "text",
+	                                  "id": "pprT2",
+	                                  "name": "Text",
+	                                  "fill": "#25282bff",
+	                                  "content": "View Paper",
+	                                  "lineHeight": 1.5,
+	                                  "fontFamily": "Roboto",
+	                                  "fontSize": 18,
+	                                  "fontWeight": "500"
+	                                }
+	                              ]
+	                            }
+	                          ]
+	                        }
                       ]
                     }
                   ]
@@ -766,34 +846,74 @@
                           "fontSize": 18,
                           "fontWeight": "normal"
                         },
-                        {
-                          "type": "frame",
-                          "id": "UmjI8",
-                          "name": "botão / secudário",
-                          "cornerRadius": 24,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#25282bff"
-                          },
-                          "padding": [
-                            8,
-                            24
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "0Y9v5",
-                              "name": "Text",
-                              "fill": "#25282bff",
-                              "content": "View Project",
-                              "lineHeight": 1.5,
-                              "fontFamily": "Roboto",
-                              "fontSize": 18,
-                              "fontWeight": "500"
-                            }
-                          ]
-                        }
+	                        {
+	                          "type": "frame",
+	                          "id": "tCqP3",
+	                          "name": "project-ctas",
+	                          "stroke": {
+	                            "align": "inside",
+	                            "thickness": 1
+	                          },
+	                          "gap": 12,
+	                          "children": [
+	                            {
+	                              "type": "frame",
+	                              "id": "UmjI8",
+	                              "name": "botão / secudário",
+	                              "cornerRadius": 24,
+	                              "stroke": {
+	                                "align": "inside",
+	                                "thickness": 1,
+	                                "fill": "#25282bff"
+	                              },
+	                              "padding": [
+	                                8,
+	                                24
+	                              ],
+	                              "children": [
+	                                {
+	                                  "type": "text",
+	                                  "id": "0Y9v5",
+	                                  "name": "Text",
+	                                  "fill": "#25282bff",
+	                                  "content": "View Project",
+	                                  "lineHeight": 1.5,
+	                                  "fontFamily": "Roboto",
+	                                  "fontSize": 18,
+	                                  "fontWeight": "500"
+	                                }
+	                              ]
+	                            },
+	                            {
+	                              "type": "frame",
+	                              "id": "pprB3",
+	                              "name": "botão / secudário",
+	                              "cornerRadius": 24,
+	                              "stroke": {
+	                                "align": "inside",
+	                                "thickness": 1,
+	                                "fill": "#25282bff"
+	                              },
+	                              "padding": [
+	                                8,
+	                                24
+	                              ],
+	                              "children": [
+	                                {
+	                                  "type": "text",
+	                                  "id": "pprT3",
+	                                  "name": "Text",
+	                                  "fill": "#25282bff",
+	                                  "content": "View Paper",
+	                                  "lineHeight": 1.5,
+	                                  "fontFamily": "Roboto",
+	                                  "fontSize": 18,
+	                                  "fontWeight": "500"
+	                                }
+	                              ]
+	                            }
+	                          ]
+	                        }
                       ]
                     }
                   ]
