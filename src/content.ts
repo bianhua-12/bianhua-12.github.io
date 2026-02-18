@@ -42,9 +42,11 @@ export const aboutParagraphs: TextSegment[][] = [
 export const researchProjects: Project[] = [
   {
     title: "RL-Co",
-    description: "RL based Sim-Real Cotraining project (link not public).",
+    description: "RL based Sim-Real Cotraining project.",
+    href: "https://github.com/slzhta/RLinf",
     imageSrc: "/img/projects/rl-co.png",
     imageAlt: "RL-based Sim-Real co-training diagram",
+    paperHref: "https://arxiv.org/abs/2602.12628v2"
   },
   // {
   //   title: "RLinf",
