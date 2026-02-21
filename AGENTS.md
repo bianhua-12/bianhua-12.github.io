@@ -47,3 +47,16 @@ There is no dedicated test suite. Validate changes with `yarn typecheck`, `yarn 
 
 - Keep commit messages short and descriptive (the repo history commonly uses `update ...`).
 - PRs should include a summary and screenshots for layout changes (especially if modifying hero/projects/about sections).
+
+## Branching & Release Workflow
+
+- Day-to-day development happens on `dev`.
+- `main` is connected to GitHub Actions Pages deploy; pushing to `main` triggers site update on GitHub Pages.
+- Standard release flow:
+  1. `git checkout dev`
+  2. Make changes, commit, and push: `git push origin dev`
+  3. `git checkout main`
+  4. Merge `dev` into `main`: `git merge dev`
+  5. Push `main` to trigger deploy: `git push origin main`
+  6. Switch back to `dev`: `git checkout dev`
+  7. Push `dev` again to keep remote branch in sync: `git push origin dev`
