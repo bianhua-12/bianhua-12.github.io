@@ -43,7 +43,7 @@ export const researchProjects: Project[] = [
   {
     title: "RL-Co",
     description: "RL-based Sim-Real co-training diagram.",
-    href: "https://github.com/slzhta/RLinf",
+    href: "https://rl-co-training.github.io/",
     imageSrc: "/img/projects/rl-co.png",
     imageAlt: "RL-based Sim-Real co-training diagram",
     paperHref: "https://arxiv.org/abs/2602.12628v2"
