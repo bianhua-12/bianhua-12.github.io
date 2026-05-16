@@ -14,7 +14,7 @@ export const site = {
     dtGroup: "https://hit-scir-dt.github.io/page/",
     rlCo: "https://rl-co-training.github.io/",
   },
-  emailText: "shchen [at] ir [dot] hit [dot] edu [dot] cn",
+  emailText: "s-chensh24 [at] bza [dot] edu [dot] cn",
   footer: "Shuaihang Chen, 2024-2026",
 };
 
