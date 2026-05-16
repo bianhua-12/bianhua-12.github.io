@@ -75,7 +75,7 @@ export const publications: Publication[] = [
     title: "RL-Co: RL-based Sim-Real Co-training for Vision-Language-Action Models",
     authors: "Shuaihang Chen et al.",
     venue: "arXiv preprint, 2026.",
-    paperHref: "https://arxiv.org/abs/2602.12628v2",
+    paperHref: "https://arxiv.org/abs/2602.12628",
     projectHref: site.links.rlCo,
   },
   {
@@ -95,7 +95,7 @@ export const researchProjects: ResearchProject[] = [
     href: site.links.rlCo,
     imageSrc: "/img/projects/rl-co.png",
     imageAlt: "RL-Co overview diagram",
-    paperHref: "https://arxiv.org/abs/2602.12628v2",
+    paperHref: "https://arxiv.org/abs/2602.12628",
   },
   {
     title: "LLM-based Multi-Agent Systems",
