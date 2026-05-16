@@ -24,16 +24,10 @@ export type Publication = {
   title: string;
   authors: string;
   venue: string;
+  description: string;
   paperHref?: string;
   projectHref?: string;
   codeHref?: string;
-};
-
-export type ResearchProject = {
-  title: string;
-  description: string;
-  href?: string;
-  paperHref?: string;
   imageSrc?: string;
   imageAlt?: string;
 };
@@ -75,34 +69,21 @@ export const publications: Publication[] = [
     title: "RL-Co: RL-based Sim-Real Co-training for Vision-Language-Action Models",
     authors: "Shuaihang Chen et al.",
     venue: "arXiv preprint, 2026.",
+    description:
+      "RL-based sim-real co-training for improving Vision-Language-Action models in embodied tasks.",
     paperHref: "https://arxiv.org/abs/2602.12628",
     projectHref: site.links.rlCo,
+    imageSrc: "/img/projects/rl-co.png",
+    imageAlt: "RL-Co overview diagram",
   },
   {
     title: "A Survey on LLM-based Multi-Agent Systems",
     authors: "Shuaihang Chen et al.",
     venue: "arXiv preprint, 2024.",
-    paperHref: "https://arxiv.org/abs/2412.17481",
-    codeHref: site.links.masSurvey,
-  },
-];
-
-export const researchProjects: ResearchProject[] = [
-  {
-    title: "RL-Co",
-    description:
-      "RL-based sim-real co-training for improving Vision-Language-Action models in embodied tasks.",
-    href: site.links.rlCo,
-    imageSrc: "/img/projects/rl-co.png",
-    imageAlt: "RL-Co overview diagram",
-    paperHref: "https://arxiv.org/abs/2602.12628",
-  },
-  {
-    title: "LLM-based Multi-Agent Systems",
     description:
       "A survey project organizing recent work on architectures, coordination mechanisms, applications, and evaluation of LLM-based multi-agent systems.",
-    href: site.links.masSurvey,
     paperHref: "https://arxiv.org/abs/2412.17481",
+    codeHref: site.links.masSurvey,
     imageSrc: "/img/projects/survey.png",
     imageAlt: "LLM-based multi-agent systems overview diagram",
   },

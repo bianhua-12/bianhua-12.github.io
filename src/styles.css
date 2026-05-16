@@ -259,20 +259,21 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-.publicationList,
-.researchList {
+.publicationList {
   display: grid;
   gap: 22px;
 }
 
-.publication,
-.researchItem {
+.publication {
   padding: 0 0 22px;
   border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
 }
 
-.publication:last-child,
-.researchItem:last-child {
+.publication:last-child {
   padding-bottom: 0;
   border-bottom: 0;
 }
@@ -304,19 +305,12 @@ body {
   font-size: 15px;
 }
 
-.researchItem {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 22px;
-  align-items: start;
-}
-
-.researchThumbWrap {
+.publicationThumbWrap {
   width: 100%;
   min-height: 116px;
 }
 
-.researchThumbButton {
+.publicationThumbButton {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -327,7 +321,7 @@ body {
   cursor: zoom-in;
 }
 
-.researchThumb {
+.publicationThumb {
   width: 100%;
   height: 100%;
   display: block;
@@ -451,11 +445,11 @@ body {
     flex-wrap: wrap;
   }
 
-  .researchItem {
+  .publication {
     grid-template-columns: 1fr;
   }
 
-  .researchThumbWrap {
+  .publicationThumbWrap {
     max-width: 260px;
   }
 }

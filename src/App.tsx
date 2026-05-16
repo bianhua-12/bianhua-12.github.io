@@ -5,10 +5,8 @@ import {
   newsItems,
   publications,
   researchInterests,
-  researchProjects,
   site,
   type Publication,
-  type ResearchProject,
   type TextSegment,
 } from "./content";
 
@@ -84,21 +82,6 @@ function ProfileSidebar() {
 }
 
 function PublicationItem({ publication }: { publication: Publication }) {
-  return (
-    <article className="publication">
-      <h3 className="itemTitle">{publication.title}</h3>
-      <p className="publicationAuthors">{publication.authors}</p>
-      <p className="publicationVenue">{publication.venue}</p>
-      <div className="itemLinks">
-        {publication.paperHref ? <ExternalLink href={publication.paperHref}>Paper</ExternalLink> : null}
-        {publication.projectHref ? <ExternalLink href={publication.projectHref}>Project</ExternalLink> : null}
-        {publication.codeHref ? <ExternalLink href={publication.codeHref}>Code</ExternalLink> : null}
-      </div>
-    </article>
-  );
-}
-
-function ResearchItem({ project }: { project: ResearchProject }) {
   const [zoomed, setZoomed] = useState(false);
 
   useEffect(() => {
@@ -112,36 +95,39 @@ function ResearchItem({ project }: { project: ResearchProject }) {
 
   return (
     <>
-      <article className="researchItem">
-        <div className="researchThumbWrap">
-          {project.imageSrc ? (
+      <article className="publication">
+        <div className="publicationThumbWrap">
+          {publication.imageSrc ? (
             <button
-              className="researchThumbButton"
+              className="publicationThumbButton"
               type="button"
               onClick={() => setZoomed(true)}
-              aria-label={`Open figure for ${project.title}`}
+              aria-label={`Open figure for ${publication.title}`}
             >
-              <img className="researchThumb" src={project.imageSrc} alt={project.imageAlt ?? ""} />
+              <img className="publicationThumb" src={publication.imageSrc} alt={publication.imageAlt ?? ""} />
             </button>
           ) : null}
         </div>
-        <div className="researchText">
-          <h3 className="itemTitle">{project.title}</h3>
-          <p className="itemDescription">{project.description}</p>
+        <div className="publicationText">
+          <h3 className="itemTitle">{publication.title}</h3>
+          <p className="publicationAuthors">{publication.authors}</p>
+          <p className="publicationVenue">{publication.venue}</p>
+          <p className="itemDescription">{publication.description}</p>
           <div className="itemLinks">
-            {project.href ? <ExternalLink href={project.href}>Project</ExternalLink> : null}
-            {project.paperHref ? <ExternalLink href={project.paperHref}>Paper</ExternalLink> : null}
+            {publication.paperHref ? <ExternalLink href={publication.paperHref}>Paper</ExternalLink> : null}
+            {publication.projectHref ? <ExternalLink href={publication.projectHref}>Project</ExternalLink> : null}
+            {publication.codeHref ? <ExternalLink href={publication.codeHref}>Code</ExternalLink> : null}
           </div>
         </div>
       </article>
 
-      {zoomed && project.imageSrc ? (
+      {zoomed && publication.imageSrc ? (
         <div className="modalOverlay" role="dialog" aria-modal="true" onClick={() => setZoomed(false)}>
           <div className="modalBody" onClick={(e) => e.stopPropagation()}>
             <button className="modalClose" type="button" onClick={() => setZoomed(false)} aria-label="Close">
               x
             </button>
-            <img className="modalImage" src={project.imageSrc} alt={project.imageAlt ?? ""} />
+            <img className="modalImage" src={publication.imageSrc} alt={publication.imageAlt ?? ""} />
           </div>
         </div>
       ) : null}
@@ -186,9 +172,6 @@ export default function App() {
           <a href="#publications" onClick={() => setMenuOpen(false)}>
             Publications
           </a>
-          <a href="#research" onClick={() => setMenuOpen(false)}>
-            Research
-          </a>
         </nav>
       </header>
 
@@ -221,18 +204,10 @@ export default function App() {
             </ol>
           </Section>
 
-          <Section id="publications" title="Selected Publications">
+          <Section id="publications" title="Publications">
             <div className="publicationList">
               {publications.map((publication) => (
                 <PublicationItem key={publication.title} publication={publication} />
-              ))}
-            </div>
-          </Section>
-
-          <Section id="research" title="Research Projects">
-            <div className="researchList">
-              {researchProjects.map((project) => (
-                <ResearchItem key={project.title} project={project} />
               ))}
             </div>
           </Section>
