@@ -1,13 +1,13 @@
 export const site = {
   title: "Shuaihang Chen",
-  role: "PhD Student",
-  affiliation: "Zhongguancun Academy",
-  bio: "My research focuses on reinforcement learning for Vision-Language-Action models and post-training infrastructure for large VLA models.",
+  role: "Robotics PhD Candidate",
+  affiliation: "Zhongguancun Academy & HIT",
+  bio: "Robot reward modeling, VLA post-training, and reinforcement-learning-based sim-real co-training.",
   links: {
     github: "https://github.com/bianhua-12/",
     scholar: "https://scholar.google.com/citations?user=mvKthu0AAAAJ&hl=zh-CN",
     x: "https://x.com/shuaihangEAI/",
-    rlinf: "https://github.com/bianhua-12/RLinf",
+    rlinf: "https://github.com/RLinf/RLinf",
     masSurvey: "https://github.com/bianhua-12/Multi-generative_Agent_System_survey",
     chaoYu: "https://zoeyuchao.github.io/",
     weiNanZhang: "https://homepage.hit.edu.cn/zhangweinan",
@@ -18,7 +18,7 @@ export const site = {
   footer: "Shuaihang Chen, 2024-2026",
 };
 
-export type TextSegment = { text: string; href?: string };
+export type TextSegment = { text: string; href?: string; strong?: boolean };
 
 export type Publication = {
   title: string;
@@ -41,23 +41,47 @@ export type EngineeringContribution = {
 
 export const aboutParagraphs: TextSegment[][] = [
   [
-    { text: "I am a PhD student at Zhongguancun Academy, advised by " },
+    { text: "I am a ", strong: false },
+    { text: "Robotics PhD candidate", strong: true },
+    { text: " in the joint program between Zhongguancun Academy and Harbin Institute of Technology, advised by " },
     { text: "Chao Yu", href: site.links.chaoYu },
     { text: "." },
   ],
   [
-    { text: "Before that, I was in the " },
+    { text: "My research centers on ", strong: false },
+    { text: "robot reward modeling for Vision-Language-Action (VLA) post-training", strong: true },
+    {
+      text: ". I study how to learn scalable progress, quality, and value signals from mixed-quality robot trajectories, with the goal of building general-purpose reward and value models that can evaluate and improve policies on real-world manipulation tasks.",
+    },
+  ],
+  [
+    { text: "I also work on reinforcement-learning-based sim-real co-training. In " },
+    { text: "RL-Co", href: site.links.rlCo, strong: true },
+    {
+      text: ", I led end-to-end OpenVLA post-training and evaluation across four real-world manipulation tasks. Our two-stage recipe improved average success rate from 40% to 64% over a behavior-cloning-based sim-real co-training baseline, while using reinforcement learning in simulation with real-data regularization.",
+    },
+  ],
+  [
+    { text: "Alongside algorithmic research, I build reliable VLA post-training infrastructure and contribute to " },
+    { text: "RLinf", href: site.links.rlinf, strong: true },
+    {
+      text: ", with a focus on reward-model serving, training correctness, and scalable evaluation pipelines for embodied reinforcement learning.",
+    },
+  ],
+  [
+    { text: "Before starting my PhD, I received my B.Eng. in Software Engineering from HIT, where I worked with the " },
     { text: "DT Group", href: site.links.dtGroup },
-    { text: " at SCIR-DT, Harbin Institute of Technology, advised by " },
+    { text: " at SCIR-DT under " },
     { text: "Prof. Wei-Nan Zhang", href: site.links.weiNanZhang },
     { text: "." },
   ],
-  [{ text: site.bio }],
 ];
 
 export const researchInterests = [
-  "Reinforcement learning for VLA models",
-  "Post-training infrastructure for large VLA models",
+  "Robot reward, value, and advantage modeling for VLA post-training",
+  "Learning from mixed-quality robot trajectories",
+  "RL-based sim-real co-training for real-world manipulation",
+  "Scalable VLA training and evaluation infrastructure",
 ];
 
 export const newsItems = [

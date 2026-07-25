@@ -31,15 +31,16 @@ function ExternalLink({
 function RichText({ segments }: { segments: TextSegment[] }) {
   return (
     <>
-      {segments.map((seg, idx) =>
-        seg.href ? (
+      {segments.map((seg, idx) => {
+        const content = seg.strong ? <strong>{seg.text}</strong> : seg.text;
+        return seg.href ? (
           <ExternalLink key={idx} className="inlineLink" href={seg.href}>
-            {seg.text}
+            {content}
           </ExternalLink>
         ) : (
-          <span key={idx}>{seg.text}</span>
-        ),
-      )}
+          <span key={idx}>{content}</span>
+        );
+      })}
     </>
   );
 }
@@ -208,6 +209,7 @@ export default function App() {
                 </p>
               ))}
             </div>
+            <h3 className="aboutSubheading">Research interests</h3>
             <ul className="interestList">
               {researchInterests.map((interest) => (
                 <li key={interest}>{interest}</li>
