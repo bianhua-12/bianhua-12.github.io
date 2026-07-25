@@ -11,7 +11,7 @@ export const site = {
     masSurvey: "https://github.com/bianhua-12/Multi-generative_Agent_System_survey",
     chaoYu: "https://zoeyuchao.github.io/",
     weiNanZhang: "https://homepage.hit.edu.cn/zhangweinan",
-    dtGroup: "https://hit-scir-dt.github.io/page/",
+    dtGroup: "http://81.70.39.211:2611/",
     rlCo: "https://rl-co-training.github.io/",
   },
   emailText: "s-chensh24 [at] bza [dot] edu [dot] cn",
