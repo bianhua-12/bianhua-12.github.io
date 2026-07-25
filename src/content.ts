@@ -9,7 +9,7 @@ export const site = {
     x: "https://x.com/shuaihangEAI/",
     rlinf: "https://github.com/bianhua-12/RLinf",
     masSurvey: "https://github.com/bianhua-12/Multi-generative_Agent_System_survey",
-    chaoYu: "https://nicsefc.ee.tsinghua.edu.cn/people/ChaoYu",
+    chaoYu: "https://zoeyuchao.github.io/",
     weiNanZhang: "https://homepage.hit.edu.cn/zhangweinan",
     dtGroup: "https://hit-scir-dt.github.io/page/",
     rlCo: "https://rl-co-training.github.io/",
