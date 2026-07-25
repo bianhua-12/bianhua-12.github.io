@@ -2,10 +2,12 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import {
   aboutParagraphs,
+  engineeringContributions,
   newsItems,
   publications,
   researchInterests,
   site,
+  type EngineeringContribution,
   type Publication,
   type TextSegment,
 } from "./content";
@@ -135,6 +137,23 @@ function PublicationItem({ publication }: { publication: Publication }) {
   );
 }
 
+function EngineeringItem({ contribution }: { contribution: EngineeringContribution }) {
+  return (
+    <article className="engineeringItem">
+      <p className="engineeringEyebrow">{contribution.eyebrow}</p>
+      <h3 className="itemTitle">{contribution.title}</h3>
+      <p className="itemDescription">{contribution.description}</p>
+      <div className="itemLinks">
+        {contribution.links.map((link) => (
+          <ExternalLink key={link.href} href={link.href}>
+            {link.label}
+          </ExternalLink>
+        ))}
+      </div>
+    </article>
+  );
+}
+
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -169,6 +188,9 @@ export default function App() {
           <a href="#news" onClick={() => setMenuOpen(false)}>
             News
           </a>
+          <a href="#engineering" onClick={() => setMenuOpen(false)}>
+            Engineering
+          </a>
           <a href="#publications" onClick={() => setMenuOpen(false)}>
             Publications
           </a>
@@ -202,6 +224,18 @@ export default function App() {
                 </li>
               ))}
             </ol>
+          </Section>
+
+          <Section id="engineering" title="Engineering">
+            <p className="sectionIntro">
+              I build reliable infrastructure for embodied reinforcement learning, from reward serving to
+              training correctness.
+            </p>
+            <div className="engineeringList">
+              {engineeringContributions.map((contribution) => (
+                <EngineeringItem key={contribution.title} contribution={contribution} />
+              ))}
+            </div>
           </Section>
 
           <Section id="publications" title="Publications">

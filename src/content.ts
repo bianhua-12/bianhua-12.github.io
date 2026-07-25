@@ -32,6 +32,13 @@ export type Publication = {
   imageAlt?: string;
 };
 
+export type EngineeringContribution = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  links: { label: string; href: string }[];
+};
+
 export const aboutParagraphs: TextSegment[][] = [
   [
     { text: "I am a PhD student at Zhongguancun Academy, advised by " },
@@ -61,6 +68,45 @@ export const newsItems = [
   {
     date: "2024.12",
     text: "Posted a survey on LLM-based multi-agent systems.",
+  },
+];
+
+export const engineeringContributions: EngineeringContribution[] = [
+  {
+    eyebrow: "RLinf · Reward infrastructure",
+    title: "SGLang-backed VLM reward serving for embodied RL",
+    description:
+      "Designed and upstreamed an OpenAI-compatible reward worker and a Ray-managed SGLang serving path for history-based VLM rewards. The work includes ManiSkill/Qwen examples, installation and CI coverage, documentation, and 2-GPU end-to-end validation; it also fixes a routing mismatch that could deadlock environment and rollout workers.",
+    links: [
+      {
+        label: "Merged PR #1314",
+        href: "https://github.com/RLinf/RLinf/pull/1314",
+      },
+      {
+        label: "Earlier exploration #1128",
+        href: "https://github.com/RLinf/RLinf/pull/1128",
+      },
+      {
+        label: "Earlier exploration #1191",
+        href: "https://github.com/RLinf/RLinf/pull/1191",
+      },
+    ],
+  },
+  {
+    eyebrow: "RL-Co · Training correctness",
+    title: "Restoring the intended sim-real co-training objective",
+    description:
+      "Found and fixed a silent optimization bug in RLinf's RL-Co path: the weighted SFT loss was computed and logged but did not contribute to backpropagation. The merged patch restores joint optimization of the reinforcement-learning and supervised objectives.",
+    links: [
+      {
+        label: "Merged bug fix #1368",
+        href: "https://github.com/RLinf/RLinf/pull/1368",
+      },
+      {
+        label: "RL-Co project",
+        href: "https://rl-co-training.github.io/",
+      },
+    ],
   },
 ];
 

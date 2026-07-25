@@ -259,6 +259,34 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+.sectionIntro {
+  max-width: 700px;
+  margin: -4px 0 20px;
+  color: var(--muted);
+}
+
+.engineeringList {
+  display: grid;
+  gap: 14px;
+}
+
+.engineeringItem {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 5px;
+  background: linear-gradient(110deg, var(--accent-soft), #ffffff 42%);
+}
+
+.engineeringEyebrow {
+  margin: 0 0 5px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .publicationList {
   display: grid;
   gap: 22px;
@@ -451,6 +479,10 @@ body {
 
   .publicationThumbWrap {
     max-width: 260px;
+  }
+
+  .engineeringItem {
+    padding: 16px;
   }
 }
 
