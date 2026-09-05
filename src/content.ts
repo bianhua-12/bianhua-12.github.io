@@ -86,6 +86,10 @@ export const researchInterests = [
 
 export const newsItems = [
   {
+    date: "2026.09",
+    text: "RL-Co was accepted to CoRL 2026.",
+  },
+  {
     date: "2026.02",
     text: "Released RL-Co, a sim-real co-training project for reinforcement learning with VLA models.",
   },
