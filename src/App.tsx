@@ -220,9 +220,19 @@ export default function App() {
           <Section id="news" title="News">
             <ol className="newsList">
               {newsItems.map((item) => (
-                <li key={`${item.date}-${item.text}`}>
+                <li key={`${item.date}-${item.text.map((segment) => segment.text).join("")}`}>
                   <time>{item.date}</time>
-                  <span>{item.text}</span>
+                  <span>
+                    {item.text.map((segment) =>
+                      segment.href ? (
+                        <a key={`${segment.text}-${segment.href}`} href={segment.href}>
+                          {segment.text}
+                        </a>
+                      ) : (
+                        <span key={segment.text}>{segment.text}</span>
+                      ),
+                    )}
+                  </span>
                 </li>
               ))}
             </ol>

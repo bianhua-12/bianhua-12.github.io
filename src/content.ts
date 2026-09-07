@@ -13,12 +13,19 @@ export const site = {
     weiNanZhang: "https://homepage.hit.edu.cn/zhangweinan",
     dtGroup: "http://81.70.39.211:2611/",
     rlCo: "https://rl-co-training.github.io/",
+    laWam: "https://rlinf.github.io/LaWAM/",
+    tex3d: "https://vla-attack.github.io/tex3d/",
   },
   emailText: "s-chensh24 [at] bza [dot] edu [dot] cn",
   footer: "Shuaihang Chen, 2024-2026",
 };
 
 export type TextSegment = { text: string; href?: string; strong?: boolean };
+
+export type NewsItem = {
+  date: string;
+  text: TextSegment[];
+};
 
 export type Publication = {
   title: string;
@@ -84,18 +91,41 @@ export const researchInterests = [
   "Scalable VLA training and evaluation infrastructure",
 ];
 
-export const newsItems = [
+export const newsItems: NewsItem[] = [
   {
     date: "2026.09",
-    text: "RL-Co was accepted to CoRL 2026.",
+    text: [
+      { text: "RL-Co", href: site.links.rlCo },
+      { text: " was accepted to CoRL 2026." },
+    ],
+  },
+  {
+    date: "2026.09",
+    text: [
+      { text: "A paper I co-authored, " },
+      { text: "LaWAM", href: site.links.laWam },
+      { text: ", was accepted to CoRL 2026." },
+    ],
+  },
+  {
+    date: "2026.09",
+    text: [
+      { text: "A paper I co-authored, " },
+      { text: "Tex3D", href: site.links.tex3d },
+      { text: ", was accepted to ACM MM 2026." },
+    ],
   },
   {
     date: "2026.02",
-    text: "Released RL-Co, a sim-real co-training project for reinforcement learning with VLA models.",
+    text: [
+      { text: "Released " },
+      { text: "RL-Co", href: site.links.rlCo },
+      { text: ", a sim-real co-training project for reinforcement learning with VLA models." },
+    ],
   },
   {
     date: "2024.12",
-    text: "Posted a survey on LLM-based multi-agent systems.",
+    text: [{ text: "Posted a survey on LLM-based multi-agent systems." }],
   },
 ];
 
