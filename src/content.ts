@@ -104,10 +104,7 @@ export const aboutParagraphs: TextSegment[][] = [
 
 export const researchInterests = [
   "Scalable offline reinforcement learning on large robot datasets",
-  "Large-scale real-world evaluation for Homebody action-model pretraining",
-  "Robot reward modeling and infrastructure for VLA post-training",
-  "Latent action models for robot learning",
-  "RL-based sim-real co-training for real-world manipulation",
+  "Action Model Pretraining",
 ];
 
 export const newsItems: NewsItem[] = [
