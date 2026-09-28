@@ -362,7 +362,7 @@ body {
 }
 
 .publicationAuthors,
-.publicationContribution,
+.publicationAuthorNote,
 .publicationVenue,
 .publicationSummary,
 .itemDescription {
@@ -376,7 +376,12 @@ body {
   line-height: 1.5;
 }
 
-.publicationContribution {
+.publicationAuthors sup {
+  font-size: 0.72em;
+  line-height: 0;
+}
+
+.publicationAuthorNote {
   color: var(--accent);
   font-size: 13px;
   font-weight: 600;

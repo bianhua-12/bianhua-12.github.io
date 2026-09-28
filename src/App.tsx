@@ -85,10 +85,17 @@ function ProfileSidebar() {
 }
 
 function renderPublicationAuthors(authors: string) {
-  const name = site.title;
-  const index = authors.indexOf(name);
-  if (index === -1) return authors;
-  return <>{authors.slice(0, index)}<strong>{name}</strong>{authors.slice(index + name.length)}</>;
+  return authors.split(", ").map((author, index) => {
+    const name = author.replace(/[*†]+$/, "");
+    const marks = author.slice(name.length);
+    return (
+      <span key={`${name}-${index}`}>
+        {index > 0 ? ", " : null}
+        {name === site.title ? <strong>{name}</strong> : name}
+        {marks ? <sup>{marks}</sup> : null}
+      </span>
+    );
+  });
 }
 
 function PublicationItem({ publication }: { publication: Publication }) {
@@ -101,7 +108,7 @@ function PublicationItem({ publication }: { publication: Publication }) {
       <div className="publicationDetails">
         <h3 className="itemTitle">{publication.title}</h3>
         <p className="publicationAuthors">{renderPublicationAuthors(publication.authors)}</p>
-        {publication.contributionNote ? <p className="publicationContribution">{publication.contributionNote}</p> : null}
+        {publication.authorNote ? <p className="publicationAuthorNote">{publication.authorNote}</p> : null}
         <p className="publicationVenue">{publication.venue}</p>
         <p className="publicationSummary">{publication.description}</p>
         <div className="itemLinks">
@@ -165,7 +172,7 @@ export default function App() {
             News
           </a>
           <a href="#publications" onClick={() => setMenuOpen(false)}>
-            Publications
+            Selected Publications
           </a>
           <a href="#engineering" onClick={() => setMenuOpen(false)}>
             Engineering
@@ -213,7 +220,7 @@ export default function App() {
             </ol>
           </Section>
 
-          <Section id="publications" title="Publications">
+          <Section id="publications" title="Selected Publications">
             <div className="publicationList">
               {publications.map((publication) => (
                 <PublicationItem key={publication.title} publication={publication} />

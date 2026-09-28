@@ -33,7 +33,7 @@ export type Publication = {
   badge: string;
   imageSrc: string;
   imageAlt: string;
-  contributionNote?: string;
+  authorNote?: string;
   venue: string;
   description: string;
   paperHref?: string;
@@ -188,7 +188,8 @@ export const publications: Publication[] = [
     badge: "arXiv 2026",
     imageSrc: "https://rlinf.github.io/steam/assets/img/method.png",
     imageAlt: "STEAM method overview",
-    authors: "Zhihao Liu, Qiuyi Gu, Yitao Wang, Dongming Qiao, Yixian Zhang, Shuaihang Chen, Liangzhi Shi, Tianxing Zhou, Zefang Huang, Kang Chen, Zhen Guo, Quanlu Zhang, Jincheng Yu, Xiaodan Liang, Guoliang Fan, Yu Wang, Feng Gao, Xinlei Chen, Chao Yu",
+    authors: "Zhihao Liu*, Qiuyi Gu*, Yitao Wang, Dongming Qiao, Yixian Zhang, Shuaihang Chen, Liangzhi Shi, Tianxing Zhou, Zefang Huang, Kang Chen, Zhen Guo, Quanlu Zhang, Jincheng Yu, Xiaodan Liang, Guoliang Fan, Yu Wang, Feng Gao, Xinlei Chen†, Chao Yu†",
+    authorNote: "* Equal contribution · † Corresponding authors",
     venue: "arXiv preprint, 2026.",
     description: "Self-supervised frame-level advantage modeling for learning from mixed-quality real-robot trajectories.",
     paperHref: "https://arxiv.org/abs/2606.29834",
@@ -199,7 +200,8 @@ export const publications: Publication[] = [
     badge: "CoRL 2026",
     imageSrc: "https://rlinf.github.io/LaWAM/assets/figures/lawam_overview.png",
     imageAlt: "LaWAM model overview",
-    authors: "Jialei Chen, Kai Wang, Kang Chen, Shuaihang Chen, Feng Gao, Wenhao Tang, Zhiyuan Li, Weilin Liu, Zhuyu Yao, Boxun Li, Yuanbo Xu, Chao Yu",
+    authors: "Jialei Chen, Kai Wang, Kang Chen, Shuaihang Chen, Feng Gao, Wenhao Tang, Zhiyuan Li, Weilin Liu, Zhuyu Yao, Boxun Li, Yuanbo Xu†, Chao Yu†",
+    authorNote: "† Corresponding authors",
     venue: "Conference on Robot Learning (CoRL), 2026.",
     description: "Dynamics-aware robot policies conditioned on compact latent visual subgoals.",
     paperHref: "https://arxiv.org/abs/2606.15768",
@@ -210,7 +212,8 @@ export const publications: Publication[] = [
     badge: "ACM MM 2026",
     imageSrc: "https://vla-attack.github.io/tex3d/image/framework_v4_00.png",
     imageAlt: "Tex3D framework overview",
-    authors: "Jiawei Chen, Simin Huang, Jiawei Du, Shuaihang Chen, Yu Tian, Mingjie Wei, Chao Yu, Zhaoxia Yin",
+    authors: "Jiawei Chen*, Simin Huang*, Jiawei Du, Shuaihang Chen, Yu Tian, Mingjie Wei, Chao Yu†, Zhaoxia Yin†",
+    authorNote: "* Equal contribution · † Corresponding authors",
     venue: "ACM International Conference on Multimedia (ACM MM), 2026.",
     description: "Physically grounded 3D texture attacks that reveal vulnerabilities in vision-language-action models.",
     paperHref: "https://arxiv.org/abs/2604.01618",
@@ -221,8 +224,8 @@ export const publications: Publication[] = [
     badge: "CoRL 2026",
     imageSrc: "/img/projects/rl-co.png",
     imageAlt: "RL-Co framework overview",
-    authors: "Liangzhi Shi*, Shuaihang Chen*, Feng Gao, Yinuo Chen, Kang Chen, Tonghe Zhang, Hongzhi Zang, Jiakai Zhou, Weinan Zhang, Chao Yu, Yu Wang",
-    contributionNote: "* Equal contribution (co-first authors)",
+    authors: "Liangzhi Shi*, Shuaihang Chen*, Feng Gao, Yinuo Chen, Kang Chen, Tonghe Zhang, Hongzhi Zang, Jiakai Zhou, Weinan Zhang, Chao Yu†, Yu Wang†",
+    authorNote: "* Equal contribution (co-first authors) · † Corresponding authors",
     venue: "Conference on Robot Learning (CoRL), 2026.",
     description: "A two-stage RL-based sim-real co-training framework for real-world VLA policies.",
     paperHref: "https://arxiv.org/abs/2602.12628",
