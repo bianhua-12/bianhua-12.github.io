@@ -2,7 +2,7 @@ export const site = {
   title: "Shuaihang Chen",
   role: "Robotics PhD Candidate",
   affiliation: "Zhongguancun Academy",
-  bio: "Robot reward modeling, large-scale offline RL, VLA post-training, and action-model pretraining evaluation.",
+  bio: "Scalable offline RL on large robot datasets and real-world evaluation for action-model pretraining.",
   links: {
     github: "https://github.com/bianhua-12/",
     scholar: "https://scholar.google.com/citations?user=mvKthu0AAAAJ&hl=zh-CN",
@@ -55,31 +55,42 @@ export const aboutParagraphs: TextSegment[][] = [
     { text: "." },
   ],
   [
-    { text: "My current research centers on ", strong: false },
-    { text: "robot reward modeling for Vision-Language-Action (VLA) post-training", strong: true },
+    { text: "My primary research focus is ", strong: false },
+    { text: "scalable offline reinforcement learning on large robot datasets", strong: true },
     {
-      text: ". I study how to learn scalable progress, quality, and value signals from mixed-quality robot trajectories, with the goal of building general-purpose reward and value models that can evaluate and improve policies on real-world manipulation tasks.",
+      text: " for robot policies. I study how to improve embodied policies from large, heterogeneous collections of offline robot trajectories.",
     },
   ],
   [
-    { text: "I am also working on ", strong: false },
-    { text: "large-scale offline reinforcement learning", strong: true },
+    { text: "In parallel, I work on ", strong: false },
+    { text: "large-scale real-world robot evaluation for Homebody action-model pretraining", strong: true },
     {
-      text: " for robot policies, including data-centric training recipes, policy improvement from heterogeneous trajectories, and robust evaluation for embodied decision-making.",
+      text: ", studying how pretrained action representations transfer to downstream manipulation tasks through systematic evaluation on real robots.",
     },
   ],
   [
-    { text: "I also work on reinforcement-learning-based sim-real co-training. In " },
-    { text: "RL-Co", href: site.links.rlCo, strong: true },
-    {
-      text: ", I led end-to-end OpenVLA post-training and evaluation across four real-world manipulation tasks. Our two-stage recipe improved average success rate from 40% to 64% over a behavior-cloning-based sim-real co-training baseline, while using reinforcement learning in simulation with real-data regularization.",
-    },
-  ],
-  [
-    { text: "Alongside algorithmic research, I build reliable VLA post-training infrastructure and contribute to " },
+    { text: "Previously, I explored " },
+    { text: "reward modeling for VLA post-training", strong: true },
+    { text: " and built the supporting post-training infrastructure in " },
     { text: "RLinf", href: site.links.rlinf, strong: true },
     {
-      text: ", with a focus on reward-model serving, training correctness, large-scale offline RL, and scalable evaluation pipelines for embodied reinforcement learning. I am currently evaluating Homebody action-model pretraining to better understand how pretrained action representations transfer to downstream robot control tasks.",
+      text: ". This line of work resulted in ",
+    },
+    { text: "STEAM", strong: true },
+    { text: "." },
+  ],
+  [
+    { text: "Before that, I worked on " },
+    { text: "latent action models", strong: true },
+    { text: ", resulting in " },
+    { text: "LaWAM", href: site.links.laWam, strong: true },
+    { text: "." },
+  ],
+  [
+    { text: "Earlier, I developed " },
+    { text: "RL-Co", href: site.links.rlCo, strong: true },
+    {
+      text: ", a two-stage framework for reinforcement-learning-based sim-real co-training of Vision-Language-Action models.",
     },
   ],
   [
@@ -92,12 +103,11 @@ export const aboutParagraphs: TextSegment[][] = [
 ];
 
 export const researchInterests = [
-  "Robot reward, value, and advantage modeling for VLA post-training",
-  "Large-scale offline reinforcement learning for robot policies",
-  "Evaluation of Homebody action-model pretraining",
-  "Learning from mixed-quality robot trajectories",
+  "Scalable offline reinforcement learning on large robot datasets",
+  "Large-scale real-world evaluation for Homebody action-model pretraining",
+  "Robot reward modeling and infrastructure for VLA post-training",
+  "Latent action models for robot learning",
   "RL-based sim-real co-training for real-world manipulation",
-  "Scalable VLA training and evaluation infrastructure",
 ];
 
 export const newsItems: NewsItem[] = [
