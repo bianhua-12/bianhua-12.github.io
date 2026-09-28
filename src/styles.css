@@ -312,6 +312,10 @@ body {
   align-items: start;
 }
 
+.publicationNoImage {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .publication:last-child {
   padding-bottom: 0;
   border-bottom: 0;

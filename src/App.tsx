@@ -84,6 +84,13 @@ function ProfileSidebar() {
   );
 }
 
+function renderPublicationAuthors(authors: string) {
+  const name = site.title;
+  const index = authors.indexOf(name);
+  if (index === -1) return authors;
+  return <>{authors.slice(0, index)}<strong>{name}</strong>{authors.slice(index + name.length)}</>;
+}
+
 function PublicationItem({ publication }: { publication: Publication }) {
   const [zoomed, setZoomed] = useState(false);
 
@@ -98,9 +105,9 @@ function PublicationItem({ publication }: { publication: Publication }) {
 
   return (
     <>
-      <article className="publication">
-        <div className="publicationThumbWrap">
-          {publication.imageSrc ? (
+      <article className={publication.imageSrc ? "publication" : "publication publicationNoImage"}>
+        {publication.imageSrc ? (
+          <div className="publicationThumbWrap">
             <button
               className="publicationThumbButton"
               type="button"
@@ -109,11 +116,11 @@ function PublicationItem({ publication }: { publication: Publication }) {
             >
               <img className="publicationThumb" src={publication.imageSrc} alt={publication.imageAlt ?? ""} />
             </button>
-          ) : null}
-        </div>
+          </div>
+        ) : null}
         <div className="publicationText">
           <h3 className="itemTitle">{publication.title}</h3>
-          <p className="publicationAuthors">{publication.authors}</p>
+          <p className="publicationAuthors">{renderPublicationAuthors(publication.authors)}</p>
           <p className="publicationVenue">{publication.venue}</p>
           <p className="itemDescription">{publication.description}</p>
           <div className="itemLinks">
