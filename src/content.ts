@@ -1,8 +1,8 @@
 export const site = {
   title: "Shuaihang Chen",
   role: "Robotics PhD Candidate",
-  affiliation: "Zhongguancun Academy & HIT",
-  bio: "Robot reward modeling, VLA post-training, and reinforcement-learning-based sim-real co-training.",
+  affiliation: "Zhongguancun Academy",
+  bio: "Robot reward modeling, large-scale offline RL, VLA post-training, and action-model pretraining evaluation.",
   links: {
     github: "https://github.com/bianhua-12/",
     scholar: "https://scholar.google.com/citations?user=mvKthu0AAAAJ&hl=zh-CN",
@@ -55,10 +55,17 @@ export const aboutParagraphs: TextSegment[][] = [
     { text: "." },
   ],
   [
-    { text: "My research centers on ", strong: false },
+    { text: "My current research centers on ", strong: false },
     { text: "robot reward modeling for Vision-Language-Action (VLA) post-training", strong: true },
     {
       text: ". I study how to learn scalable progress, quality, and value signals from mixed-quality robot trajectories, with the goal of building general-purpose reward and value models that can evaluate and improve policies on real-world manipulation tasks.",
+    },
+  ],
+  [
+    { text: "I am also working on ", strong: false },
+    { text: "large-scale offline reinforcement learning", strong: true },
+    {
+      text: " for robot policies, including data-centric training recipes, policy improvement from heterogeneous trajectories, and robust evaluation for embodied decision-making.",
     },
   ],
   [
@@ -72,7 +79,7 @@ export const aboutParagraphs: TextSegment[][] = [
     { text: "Alongside algorithmic research, I build reliable VLA post-training infrastructure and contribute to " },
     { text: "RLinf", href: site.links.rlinf, strong: true },
     {
-      text: ", with a focus on reward-model serving, training correctness, and scalable evaluation pipelines for embodied reinforcement learning.",
+      text: ", with a focus on reward-model serving, training correctness, large-scale offline RL, and scalable evaluation pipelines for embodied reinforcement learning. I am currently evaluating Homebody action-model pretraining to better understand how pretrained action representations transfer to downstream robot control tasks.",
     },
   ],
   [
@@ -86,6 +93,8 @@ export const aboutParagraphs: TextSegment[][] = [
 
 export const researchInterests = [
   "Robot reward, value, and advantage modeling for VLA post-training",
+  "Large-scale offline reinforcement learning for robot policies",
+  "Evaluation of Homebody action-model pretraining",
   "Learning from mixed-quality robot trajectories",
   "RL-based sim-real co-training for real-world manipulation",
   "Scalable VLA training and evaluation infrastructure",
