@@ -300,25 +300,57 @@ body {
 
 .publicationList {
   display: grid;
-  gap: 22px;
+  gap: 16px;
 }
 
 .publication {
-  padding: 0 0 22px;
-  border-bottom: 1px solid var(--line);
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 22px;
-  align-items: start;
+  grid-template-columns: minmax(0, 210px) minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 7px 22px rgba(32, 33, 36, 0.055);
 }
 
-.publicationNoImage {
-  grid-template-columns: minmax(0, 1fr);
+.publicationVisual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 170px;
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--subtle);
 }
 
-.publication:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
+.publicationVisual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.publicationBadge {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  z-index: 1;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  box-shadow: 0 2px 7px rgba(32, 33, 36, 0.18);
+}
+
+.publicationDetails {
+  min-width: 0;
 }
 
 .itemTitle {
@@ -330,7 +362,9 @@ body {
 }
 
 .publicationAuthors,
+.publicationContribution,
 .publicationVenue,
+.publicationSummary,
 .itemDescription {
   margin: 5px 0 0;
   color: var(--muted);
@@ -338,38 +372,39 @@ body {
 
 .publicationAuthors {
   color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.publicationContribution {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.publicationVenue {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.publicationSummary {
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .itemLinks {
   margin-top: 8px;
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
-  font-size: 15px;
+  font-size: 13px;
 }
 
-.publicationThumbWrap {
-  width: 100%;
-  min-height: 116px;
-}
-
-.publicationThumbButton {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
+.publication .itemLinks a {
+  padding: 3px 10px;
   border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 8px;
-  background: var(--subtle);
-  cursor: zoom-in;
-}
-
-.publicationThumb {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-  object-position: center;
+  border-radius: 999px;
+  background: #ffffff;
 }
 
 .footer {
@@ -381,50 +416,7 @@ body {
   border-top: 1px solid var(--line);
 }
 
-.modalOverlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: grid;
-  place-items: center;
-  background: rgba(32, 33, 36, 0.68);
-  padding: 20px;
-}
-
-.modalBody {
-  width: min(1100px, 95vw);
-  max-height: 92vh;
-  background: #ffffff;
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-}
-
-.modalClose {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.94);
-  cursor: pointer;
-  color: var(--text);
-  font-size: 18px;
-  line-height: 1;
-}
-
-.modalImage {
-  width: 100%;
-  height: 100%;
-  max-height: 92vh;
-  display: block;
-  object-fit: contain;
-  background: #ffffff;
-}
-
-@media (max-width: 760px) {
+@media (max-width: 980px) {
   .header {
     padding: 0 22px;
   }
@@ -488,16 +480,18 @@ body {
     flex-wrap: wrap;
   }
 
+  .engineeringItem {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 600px) {
   .publication {
     grid-template-columns: 1fr;
   }
 
-  .publicationThumbWrap {
-    max-width: 260px;
-  }
-
-  .engineeringItem {
-    padding: 16px;
+  .publicationVisual {
+    height: 190px;
   }
 }
 

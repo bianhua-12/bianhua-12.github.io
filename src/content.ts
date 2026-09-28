@@ -8,7 +8,6 @@ export const site = {
     scholar: "https://scholar.google.com/citations?user=mvKthu0AAAAJ&hl=zh-CN",
     x: "https://x.com/shuaihangEAI/",
     rlinf: "https://github.com/RLinf/RLinf",
-    masSurvey: "https://github.com/bianhua-12/Multi-generative_Agent_System_survey",
     chaoYu: "https://zoeyuchao.github.io/",
     weiNanZhang: "https://homepage.hit.edu.cn/zhangweinan",
     dtGroup: "http://81.70.39.211:2611/",
@@ -31,13 +30,14 @@ export type NewsItem = {
 export type Publication = {
   title: string;
   authors: string;
+  badge: string;
+  imageSrc: string;
+  imageAlt: string;
+  contributionNote?: string;
   venue: string;
   description: string;
   paperHref?: string;
   projectHref?: string;
-  codeHref?: string;
-  imageSrc?: string;
-  imageAlt?: string;
 };
 
 export type EngineeringContribution = {
@@ -112,6 +112,7 @@ export const newsItems: NewsItem[] = [
   {
     date: "2026.09",
     text: [
+      { text: "Our co-first-author paper " },
       { text: "RL-Co", href: site.links.rlCo },
       { text: " was accepted to CoRL 2026." },
     ],
@@ -139,10 +140,6 @@ export const newsItems: NewsItem[] = [
       { text: "RL-Co", href: site.links.rlCo },
       { text: ", a sim-real co-training project for reinforcement learning with VLA models." },
     ],
-  },
-  {
-    date: "2024.12",
-    text: [{ text: "Posted a survey on LLM-based multi-agent systems." }],
   },
 ];
 
@@ -188,6 +185,9 @@ export const engineeringContributions: EngineeringContribution[] = [
 export const publications: Publication[] = [
   {
     title: "STEAM: Self-Supervised Temporal Ensemble Advantage Modeling for Real-World Robot Learning",
+    badge: "arXiv 2026",
+    imageSrc: "https://rlinf.github.io/steam/assets/img/method.png",
+    imageAlt: "STEAM method overview",
     authors: "Zhihao Liu, Qiuyi Gu, Yitao Wang, Dongming Qiao, Yixian Zhang, Shuaihang Chen, Liangzhi Shi, Tianxing Zhou, Zefang Huang, Kang Chen, Zhen Guo, Quanlu Zhang, Jincheng Yu, Xiaodan Liang, Guoliang Fan, Yu Wang, Feng Gao, Xinlei Chen, Chao Yu",
     venue: "arXiv preprint, 2026.",
     description: "Self-supervised frame-level advantage modeling for learning from mixed-quality real-robot trajectories.",
@@ -196,6 +196,9 @@ export const publications: Publication[] = [
   },
   {
     title: "LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies",
+    badge: "CoRL 2026",
+    imageSrc: "https://rlinf.github.io/LaWAM/assets/figures/lawam_overview.png",
+    imageAlt: "LaWAM model overview",
     authors: "Jialei Chen, Kai Wang, Kang Chen, Shuaihang Chen, Feng Gao, Wenhao Tang, Zhiyuan Li, Weilin Liu, Zhuyu Yao, Boxun Li, Yuanbo Xu, Chao Yu",
     venue: "Conference on Robot Learning (CoRL), 2026.",
     description: "Dynamics-aware robot policies conditioned on compact latent visual subgoals.",
@@ -204,6 +207,9 @@ export const publications: Publication[] = [
   },
   {
     title: "Tex3D: Objects as Attack Surfaces via Adversarial 3D Textures for Vision-Language-Action Models",
+    badge: "ACM MM 2026",
+    imageSrc: "https://vla-attack.github.io/tex3d/image/framework_v4_00.png",
+    imageAlt: "Tex3D framework overview",
     authors: "Jiawei Chen, Simin Huang, Jiawei Du, Shuaihang Chen, Yu Tian, Mingjie Wei, Chao Yu, Zhaoxia Yin",
     venue: "ACM International Conference on Multimedia (ACM MM), 2026.",
     description: "Physically grounded 3D texture attacks that reveal vulnerabilities in vision-language-action models.",
@@ -212,22 +218,14 @@ export const publications: Publication[] = [
   },
   {
     title: "Beyond Imitation: Reinforcement Learning-Based Sim-Real Co-Training for VLA Models",
-    authors: "Liangzhi Shi, Shuaihang Chen, Feng Gao, Yinuo Chen, Kang Chen, Tonghe Zhang, Hongzhi Zang, Jiakai Zhou, Weinan Zhang, Chao Yu, Yu Wang",
+    badge: "CoRL 2026",
+    imageSrc: "/img/projects/rl-co.png",
+    imageAlt: "RL-Co framework overview",
+    authors: "Liangzhi Shi*, Shuaihang Chen*, Feng Gao, Yinuo Chen, Kang Chen, Tonghe Zhang, Hongzhi Zang, Jiakai Zhou, Weinan Zhang, Chao Yu, Yu Wang",
+    contributionNote: "* Equal contribution (co-first authors)",
     venue: "Conference on Robot Learning (CoRL), 2026.",
     description: "A two-stage RL-based sim-real co-training framework for real-world VLA policies.",
     paperHref: "https://arxiv.org/abs/2602.12628",
     projectHref: site.links.rlCo,
-    imageSrc: "/img/projects/rl-co.png",
-    imageAlt: "RL-Co overview diagram",
-  },
-  {
-    title: "A Survey on LLM-based Multi-Agent System: Recent Advances and New Frontiers in Application",
-    authors: "Shuaihang Chen, Yuanxing Liu, Wei Han, Weinan Zhang, Ting Liu",
-    venue: "arXiv preprint, 2024.",
-    description: "A survey of LLM-based multi-agent systems, their applications, challenges, and future directions.",
-    paperHref: "https://arxiv.org/abs/2412.17481",
-    codeHref: site.links.masSurvey,
-    imageSrc: "/img/projects/survey.png",
-    imageAlt: "LLM-based multi-agent systems overview diagram",
   },
 ];

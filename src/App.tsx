@@ -92,56 +92,24 @@ function renderPublicationAuthors(authors: string) {
 }
 
 function PublicationItem({ publication }: { publication: Publication }) {
-  const [zoomed, setZoomed] = useState(false);
-
-  useEffect(() => {
-    if (!zoomed) return;
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setZoomed(false);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [zoomed]);
-
   return (
-    <>
-      <article className={publication.imageSrc ? "publication" : "publication publicationNoImage"}>
-        {publication.imageSrc ? (
-          <div className="publicationThumbWrap">
-            <button
-              className="publicationThumbButton"
-              type="button"
-              onClick={() => setZoomed(true)}
-              aria-label={`Open figure for ${publication.title}`}
-            >
-              <img className="publicationThumb" src={publication.imageSrc} alt={publication.imageAlt ?? ""} />
-            </button>
-          </div>
-        ) : null}
-        <div className="publicationText">
-          <h3 className="itemTitle">{publication.title}</h3>
-          <p className="publicationAuthors">{renderPublicationAuthors(publication.authors)}</p>
-          <p className="publicationVenue">{publication.venue}</p>
-          <p className="itemDescription">{publication.description}</p>
-          <div className="itemLinks">
-            {publication.paperHref ? <ExternalLink href={publication.paperHref}>Paper</ExternalLink> : null}
-            {publication.projectHref ? <ExternalLink href={publication.projectHref}>Project</ExternalLink> : null}
-            {publication.codeHref ? <ExternalLink href={publication.codeHref}>Code</ExternalLink> : null}
-          </div>
+    <article className="publication">
+      <div className="publicationVisual">
+        <span className="publicationBadge">{publication.badge}</span>
+        <img src={publication.imageSrc} alt={publication.imageAlt} loading="lazy" />
+      </div>
+      <div className="publicationDetails">
+        <h3 className="itemTitle">{publication.title}</h3>
+        <p className="publicationAuthors">{renderPublicationAuthors(publication.authors)}</p>
+        {publication.contributionNote ? <p className="publicationContribution">{publication.contributionNote}</p> : null}
+        <p className="publicationVenue">{publication.venue}</p>
+        <p className="publicationSummary">{publication.description}</p>
+        <div className="itemLinks">
+          {publication.paperHref ? <ExternalLink href={publication.paperHref}>Paper</ExternalLink> : null}
+          {publication.projectHref ? <ExternalLink href={publication.projectHref}>Project</ExternalLink> : null}
         </div>
-      </article>
-
-      {zoomed && publication.imageSrc ? (
-        <div className="modalOverlay" role="dialog" aria-modal="true" onClick={() => setZoomed(false)}>
-          <div className="modalBody" onClick={(e) => e.stopPropagation()}>
-            <button className="modalClose" type="button" onClick={() => setZoomed(false)} aria-label="Close">
-              x
-            </button>
-            <img className="modalImage" src={publication.imageSrc} alt={publication.imageAlt ?? ""} />
-          </div>
-        </div>
-      ) : null}
-    </>
+      </div>
+    </article>
   );
 }
 
@@ -196,11 +164,11 @@ export default function App() {
           <a href="#news" onClick={() => setMenuOpen(false)}>
             News
           </a>
-          <a href="#engineering" onClick={() => setMenuOpen(false)}>
-            Engineering
-          </a>
           <a href="#publications" onClick={() => setMenuOpen(false)}>
             Publications
+          </a>
+          <a href="#engineering" onClick={() => setMenuOpen(false)}>
+            Engineering
           </a>
         </nav>
       </header>
@@ -245,6 +213,14 @@ export default function App() {
             </ol>
           </Section>
 
+          <Section id="publications" title="Publications">
+            <div className="publicationList">
+              {publications.map((publication) => (
+                <PublicationItem key={publication.title} publication={publication} />
+              ))}
+            </div>
+          </Section>
+
           <Section id="engineering" title="Engineering">
             <p className="sectionIntro">
               I build reliable infrastructure for embodied reinforcement learning, from reward serving to
@@ -253,14 +229,6 @@ export default function App() {
             <div className="engineeringList">
               {engineeringContributions.map((contribution) => (
                 <EngineeringItem key={contribution.title} contribution={contribution} />
-              ))}
-            </div>
-          </Section>
-
-          <Section id="publications" title="Publications">
-            <div className="publicationList">
-              {publications.map((publication) => (
-                <PublicationItem key={publication.title} publication={publication} />
               ))}
             </div>
           </Section>
